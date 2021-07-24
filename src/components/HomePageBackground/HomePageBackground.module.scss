@@ -1,17 +1,17 @@
 @import '../../assets/baseStyles.scss';
 
 .back {
-  height: 1024px;
   width: 100%;
-
   @include for-size(tablet) {
+    height: 1024px;
     background-image: url('../../assets/pictures/Strawberry-Big-PNG.png'),
-      url('../../assets/pictures/diary-leaves-tablet.png'),
+      url('../../assets/pictures/banana.png'),
+      url('../../assets/pictures/hero-leaves-tablet.png'),
       url('../../assets/pictures/shapeGray.svg');
-    background-position: bottom 185px right 47px, center,
-      bottom -229px right -77px;
+    background-position: bottom 185px right 47px, bottom -58px right -69px,
+      bottom -30px right 222px, bottom -185px right -35px;
     background-repeat: no-repeat, no-repeat, no-repeat;
-    background-size: 291px 284px;
+    background-size: 291px 284px, 580px 510px, 531px 602px, 553px 750px;
   }
   @include for-size(desktop) {
     background-color: rgb(142, 214, 113);
