@@ -7,6 +7,7 @@ import routes from '../routes';
 
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
+
 import { Component } from 'react';
 // import Loader from './components/Loader';
 

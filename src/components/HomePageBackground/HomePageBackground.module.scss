@@ -1,0 +1,38 @@
+@import '../../assets/baseStyles.scss';
+
+.back {
+  width: 100%;
+  max-width: 100%;
+  @media (min-width: 420px) {
+    min-height: 100vh;
+    background-image: url('../../assets/pictures/Strawberry-Big-PNG@2x.png'),
+      url('../../assets/pictures/hero-leaves-desktop.png'),
+      url('../../assets/pictures/shapeGray.svg');
+    background-position: bottom -9px right -29px, bottom 45px right 207px,
+      bottom 0 right 0;
+    background-repeat: no-repeat;
+    background-size: 30.7%, 43.1%, 57.1%, 47%;
+  }
+  @include for-size(tablet) {
+    height: 1024px;
+    background-image: url('../../assets/pictures/Strawberry-Big-PNG.png'),
+      url('../../assets/pictures/banana.png'),
+      url('../../assets/pictures/hero-leaves-tablet.png'),
+      url('../../assets/pictures/shapeGray.svg');
+    background-position: bottom 185px right 47px, bottom -58px right -69px,
+      bottom -30px right 222px, bottom -185px right -35px;
+    background-repeat: no-repeat;
+    background-size: 291px 284px, 580px 510px, 531px 602px, 553px 750px;
+  }
+  @include for-size(desktop) {
+    height: 850px;
+    background-image: url('../../assets/pictures/Strawberry-Big-PNG@2x.png'),
+      url('../../assets/pictures/banana-desktop.png'),
+      url('../../assets/pictures/hero-leaves-desktop.png'),
+      url('../../assets/pictures/shapeGray.svg');
+    background-position: bottom -9px right -29px, bottom 401px right -276px,
+      bottom 45px right 207px, bottom 0 right 0;
+    background-repeat: no-repeat;
+    background-size: 394px, 773px 552px, 731px, 602px;
+  }
+}

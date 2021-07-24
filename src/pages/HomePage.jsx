@@ -1,5 +1,16 @@
 import Container from '../components/Container';
+import Nav from '../components/Nav';
+import Header from '../components/Header';
+import HomePageBackground from '../components/HomePageBackground';
 
 export default function HomePage() {
-  return <div></div>;
+  return (
+    <HomePageBackground>
+      <Container>
+        <Nav>
+          <Header />
+        </Nav>
+      </Container>
+    </HomePageBackground>
+  );
 }
