@@ -1,6 +1,6 @@
 @import '../../assets/baseStyles.scss';
 
-// .loginisation {
+// .registration {
 //   // background-color: rgb(39, 109, 85);
 //   min-height: 100vh;
 //   margin: 0 auto;
@@ -90,14 +90,8 @@
   box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
   border-radius: 30px;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
   opacity: 0.8;
-
-  &:disabled {
-    &:hover {
-      opacity: 0.4;
-    }
-    opacity: 0.4;
-  }
 
   &:hover {
     opacity: 1;
@@ -116,9 +110,18 @@
   cursor: pointer;
   border-radius: 30px;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  text-decoration: none;
+
+  &:disabled {
+    &:hover {
+      opacity: 0.4;
+      border: 2px solid $accent-color;
+      box-shadow: none;
+    }
+    opacity: 0.4;
+  }
 
   &:hover {
+    opacity: 1;
     border: 2px solid transparent;
     box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
   }
