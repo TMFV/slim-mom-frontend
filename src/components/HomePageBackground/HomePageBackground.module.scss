@@ -1,0 +1,18 @@
+@import '../../baseStyles.scss';
+
+.back {
+  height: 1024px;
+  width: 100%;
+
+  @include for-size(tablet) {
+    background-image: url('../../pictures//Strawberry-Big-PNG.png'),
+      url('../../pictures/diary-leaves-tablet.png'),
+      url('../../pictures/shapeGray.svg');
+    background-position: center, center, bottom -229px right -77px;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    // background-size: 300%;
+  }
+  @include for-size(desktop) {
+    background-color: rgb(142, 214, 113);
+  }
+}
