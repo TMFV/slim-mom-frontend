@@ -9,7 +9,6 @@ export default function HomePage() {
       <Container>
         <Nav>
           <Header />
-          <p></p>
         </Nav>
       </Container>
     </HomePageBackground>
