@@ -1,3 +1,5 @@
+@import '../../baseStyles.scss';
+
 .diary__lableDate {
   position: relative;
 }
@@ -8,4 +10,8 @@
   height: 20px;
   left: 241px;
   bottom: 3px;
+
+  @include for-size(mobile-only) {
+    left: 138px;
+  }
 }
