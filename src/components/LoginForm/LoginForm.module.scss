@@ -1,0 +1,116 @@
+@import '../../baseStyles.scss';
+
+.loginisation {
+}
+
+.title {
+  @include font(700, 14px, 0.95, $secondary-font);
+  color: $accent-color;
+  text-transform: uppercase;
+  margin: 0 0 70px 0;
+}
+
+.form {
+}
+
+.input__form {
+  position: relative;
+  width: 240px;
+}
+
+.label {
+  @include font(700, 14px, 1.21);
+  color: $secondary-text-color;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  margin: 0 0 40px 0;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  background: transparent;
+  @include font(400, 12px, 1.41);
+  outline: transparent;
+}
+
+.notification {
+  position: absolute;
+  bottom: -30%;
+  left: 0;
+  margin: 0;
+  width: 150px;
+  @include font(400, 10px, 1.16);
+  color: red;
+}
+
+.buttons {
+  margin-top: 60px;
+}
+
+.btn__login {
+  background-color: $accent-color;
+  color: $accent-text-color;
+  padding: 13px 48px;
+  margin: 0 30px 0 0;
+  @include font(700, 14px, 1.21);
+  border: 2px solid transparent;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+  border-radius: 30px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+
+  &:disabled {
+    &:hover {
+      opacity: 0.5;
+    }
+    opacity: 0.5;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.btn__register {
+  background-color: $primary-bg-color;
+  color: $accent-color;
+  padding: 13px 48px;
+  margin: 0 30px 0 0;
+  @include font(700, 14px, 1.21);
+  border: 2px solid $accent-color;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+
+  &:hover {
+    background-color: $accent-color;
+    border: 2px solid transparent;
+    color: $accent-text-color;
+    box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+  }
+}
+
+// // Fonts
+// $primary-font: 'Verdana', sans-serif;
+// $secondary-font: 'Gotham', sans-serif;
+// $primary-letter-spacing: 0.04em;
+
+// // Colors
+// $primary-text-color: #212121;
+// $secondary-text-color: #9b9faa;
+// $accent-text-color: #ffffff;
+
+// $accent-color: #fc842d;
+
+// $primary-bg-color: #ffffff;
+// $secondary-bg-color: #f0f1f3;
+
+// $decorative-color: #264061;
+// //используется для фона бургер-меню и для текста суточной нормы ккал
+
+// // transition
+// $cubic: 250ms cubic-bezier(0.4, 0, 0.2, 1);
