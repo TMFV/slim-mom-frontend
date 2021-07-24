@@ -1,11 +1,17 @@
-.diary__date {
-  display: flex;
+@import '../../baseStyles.scss';
+
+.diary__lableDate {
+  position: relative;
 }
 
-.diary__dateView {
-  size: 34pc;
-}
+.diary__iconDate {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 241px;
+  bottom: 3px;
 
-.diary__calendar {
-  color: aqua;
+  @include for-size(mobile-only) {
+    left: 138px;
+  }
 }
