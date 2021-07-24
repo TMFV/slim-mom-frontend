@@ -1,13 +1,13 @@
-@import '../../baseStyles.scss';
+@import '../../assets/baseStyles.scss';
 
 .back {
   height: 1024px;
   width: 100%;
 
   @include for-size(tablet) {
-    background-image: url('../../pictures//Strawberry-Big-PNG.png'),
-      url('../../pictures/diary-leaves-tablet.png'),
-      url('../../pictures/shapeGray.svg');
+    background-image: url('../../assets/pictures/Strawberry-Big-PNG.png'),
+      url('../../assets/pictures/diary-leaves-tablet.png'),
+      url('../../assets/pictures/shapeGray.svg');
     background-position: center, center, bottom -229px right -77px;
     background-repeat: no-repeat, no-repeat, no-repeat;
     // background-size: 300%;
