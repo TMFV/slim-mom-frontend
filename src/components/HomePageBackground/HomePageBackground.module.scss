@@ -2,6 +2,17 @@
 
 .back {
   width: 100%;
+  max-width: 100%;
+  @media (min-width: 420px) {
+    min-height: 100vh;
+    background-image: url('../../assets/pictures/Strawberry-Big-PNG@2x.png'),
+      url('../../assets/pictures/hero-leaves-desktop.png'),
+      url('../../assets/pictures/shapeGray.svg');
+    background-position: bottom -9px right -29px, bottom 45px right 207px,
+      bottom 0 right 0;
+    background-repeat: no-repeat;
+    background-size: 30.7%, 43.1%, 57.1%, 47%;
+  }
   @include for-size(tablet) {
     height: 1024px;
     background-image: url('../../assets/pictures/Strawberry-Big-PNG.png'),
