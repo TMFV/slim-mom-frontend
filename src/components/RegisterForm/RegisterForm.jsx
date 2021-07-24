@@ -1,13 +1,13 @@
 import { Formik } from 'formik';
 // import { useState } from 'react';
 // import { useDispatch } from 'react-redux';
-import styles from './LoginForm.module.scss';
+import styles from './RegisterForm.module.scss';
 import * as yup from 'yup';
 import { NavLink } from 'react-router-dom';
 import routes from '../../routes';
 // import { useEffect } from 'react';
 
-const LoginForm = () => {
+const RegisterForm = () => {
   // const dispatch = useDispatch();
 
   // const onSignIn = credentials => dispatch(authOperations.logIn(credentials));
@@ -41,6 +41,10 @@ const LoginForm = () => {
   // };
 
   const validationSchema = yup.object().shape({
+    name: yup
+      .string()
+      .typeError('Должно быть строкой')
+      .required('Обязательное поле'),
     login: yup
       .string()
       .typeError('Должно быть строкой')
@@ -51,12 +55,12 @@ const LoginForm = () => {
       .required('Обязательное поле'),
   });
 
-  const signup = routes.find(route => route.label === 'Signup');
+  const login = routes.find(route => route.label === 'Login');
 
   return (
-    <div className={styles.loginisation}>
+    <div className={styles.registration}>
       <Formik
-        initialValues={{ login: '', password: '' }}
+        initialValues={{ name: '', login: '', password: '' }}
         validateOnBlur
         onSubmit={(values, { resetForm }) => {
           console.log(values);
@@ -75,7 +79,27 @@ const LoginForm = () => {
           dirty,
         }) => (
           <form className={styles.form} onSubmit={handleSubmit}>
-            <h2 className={styles.title}>Вход</h2>
+            <h2 className={styles.title}>Регистрация</h2>
+            <div className={styles.input__form}>
+              <label className={styles.label}>
+                Имя*
+                <input
+                  className={
+                    errors.name && touched.name
+                      ? styles.input__error
+                      : styles.input
+                  }
+                  type="text"
+                  name="name"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.name}
+                />
+              </label>
+              {errors.name && touched.name && (
+                <p className={styles.notification}>{errors.name}</p>
+              )}
+            </div>
             <div className={styles.input__form}>
               <label className={styles.label}>
                 Логин*
@@ -117,17 +141,17 @@ const LoginForm = () => {
               )}
             </div>
             <div className={styles.buttons}>
+              <NavLink className={styles.btn__login} to={`${login.path}`}>
+                Вход
+              </NavLink>
               <button
-                className={styles.btn__login}
+                className={styles.btn__register}
                 type="submit"
                 disabled={!isValid || !dirty}
                 onClick={handleSubmit}
               >
-                Вход
-              </button>
-              <NavLink className={styles.btn__register} to={`${signup.path}`}>
                 Регистрация
-              </NavLink>
+              </button>
             </div>
           </form>
         )}
@@ -135,4 +159,4 @@ const LoginForm = () => {
     </div>
   );
 };
-export default LoginForm;
+export default RegisterForm;
