@@ -1,0 +1,64 @@
+@import '../../baseStyles.scss';
+@import '../FormProduct/Style.module.scss';
+
+.diary__item {
+  display: flex;
+  list-style: none;
+}
+
+.diary__itemNameProduct {
+  width: 242px;
+  height: 36px;
+  margin: 0;
+  margin-right: 30px;
+  padding-bottom: 19px;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+
+  outline: none;
+
+  color: primary-text-color;
+  vertical-align: top;
+
+  @include font(400, 14px, 17px, $primary-font, $primary-letter-spacing);
+}
+
+.diary__itemVolumProduct {
+  width: 106px;
+  height: 36px;
+  margin: 0;
+  margin-right: 30px;
+  padding-bottom: 19px;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  outline: none;
+
+  color: primary-text-color;
+  text-align: right;
+
+  @include font(400, 14px, 17px, $primary-font, $primary-letter-spacing);
+}
+
+.diary__itemCcalProduct {
+  width: 106px;
+  height: 36px;
+  margin: 0;
+  margin-right: 30px;
+  padding-bottom: 19px;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  outline: none;
+
+  color: primary-text-color;
+  text-align: right;
+
+  @include font(400, 14px, 17px, $primary-font, $primary-letter-spacing);
+}
+
+.diary__btnDelProduct {
+  padding: 0;
+  height: 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

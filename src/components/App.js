@@ -5,8 +5,9 @@ import routes from '../routes';
 /* ПРИМЕР ИМПОРТА ФАЙЛОВ КОЛЛЕКЦИИ ИЗ РЕДАКСА */
 // import { usersOperations, usersSelectors } from './redux/users';
 
-import PrivateRoute from '../components/PrivateRoute';
-import PublicRoute from '../components/PublicRoute';
+import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
+
 import { Component } from 'react';
 // import Loader from './components/Loader';
 
