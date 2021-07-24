@@ -1,11 +1,11 @@
-.diary__date {
-  display: flex;
+.diary__lableDate {
+  position: relative;
 }
 
-.diary__dateView {
-  size: 34pc;
-}
-
-.diary__calendar {
-  color: aqua;
+.diary__iconDate {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 241px;
+  bottom: 3px;
 }

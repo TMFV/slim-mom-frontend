@@ -1,0 +1,11 @@
+@import '../../baseStyles.scss';
+
+.calendar {
+  width: 260px;
+  height: 38px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  @include font(700, 34px, 41px, $primary-font, $primary-letter-spacing);
+}
