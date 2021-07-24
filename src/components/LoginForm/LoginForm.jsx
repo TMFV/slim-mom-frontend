@@ -1,11 +1,11 @@
 import { Formik } from 'formik';
-import { useState } from 'react';
+// import { useState } from 'react';
 // import { useDispatch } from 'react-redux';
 import styles from './LoginForm.module.scss';
 import * as yup from 'yup';
 import { NavLink } from 'react-router-dom';
 import routes from '../../routes';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 
 const LoginForm = () => {
   // const dispatch = useDispatch();
@@ -109,17 +109,17 @@ const LoginForm = () => {
               )}
             </div>
             <div className={styles.buttons}>
-            <button
-              className={styles.btn__login}
-              type="submit"
-              disabled={!isValid && !dirty}
-              onClick={handleSubmit}
-            >
-              Вход
-            </button>
-            <NavLink className={styles.btn__register} to={`${signup.path}`}>
-              Регистрация
-            </NavLink>
+              <button
+                className={styles.btn__login}
+                type="submit"
+                disabled={!isValid && !dirty}
+                onClick={handleSubmit}
+              >
+                Вход
+              </button>
+              <NavLink className={styles.btn__register} to={`${signup.path}`}>
+                Регистрация
+              </NavLink>
             </div>
           </form>
         )}
