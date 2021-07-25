@@ -25,7 +25,7 @@
   //   background-size: 291px 284px, 580px 510px, 531px 602px, 553px 750px;
   // }
   // @include for-size(desktop) {
-  height: 850px;
+  min-height: 100vh;
   background-image: url('../../assets/pictures/banana-desktop.png'),
     url('../../assets/pictures/Strawberry-Big-PNG@2x.png'),
     url('../../assets/pictures/leaves-desktop.png'),

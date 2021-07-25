@@ -11,8 +11,8 @@ const FormProduct = () => {
   const handleAddProduct = event => {
     event.preventDefault();
     const newProduct = {
-      title: nameProduct,
-      weight: volumProduct,
+      name: nameProduct,
+      number: volumProduct,
     };
     dispatch(addProducts(newProduct));
   };
