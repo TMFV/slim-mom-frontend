@@ -1,12 +1,20 @@
 import { useState } from 'react';
-import style from './Style.module.scss';
+import { useDispatch } from 'react-redux';
+import { addProducts } from '../../redux/products/products-operations';
+import style from './FormProduct.module.scss';
 
 const FormProduct = () => {
   const [nameProduct, setNameProduct] = useState('');
   const [volumProduct, setVolumProduct] = useState('');
+  const dispatch = useDispatch();
 
-  const hendleAddProduct = event => {
+  const handleAddProduct = event => {
     event.preventDefault();
+    const newProduct = {
+      title: nameProduct,
+      weight: volumProduct,
+    };
+    dispatch(addProducts(newProduct));
   };
 
   const handleChangeNameProduct = event => {
@@ -19,7 +27,7 @@ const FormProduct = () => {
     setVolumProduct(event.target.value);
   };
   return (
-    <form className={style.diary__form} onSubmit={hendleAddProduct}>
+    <form className={style.diary__form} onSubmit={handleAddProduct}>
       <input
         className={style.diary__nameProduct}
         name={nameProduct}

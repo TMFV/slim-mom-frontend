@@ -13,8 +13,10 @@ import storage from 'redux-persist/lib/storage';
 import logger from 'redux-logger';
 
 /* ПРИМЕР ИМПОРТА РЕДЬЮСЕРОВ*/
-import { authSlice } from './auth';
-// import { someReducer } from './folderName';
+
+import { usersReducer } from './users';
+import { productsReducer } from './products';
+
 
 const middleWare = [
   ...getDefaultMiddleware({
@@ -33,8 +35,9 @@ const authPersistConfig = {
 
 const store = configureStore({
   reducer: {
-    // foodOrDate: someReducer,
-    auth: persistReducer(authPersistConfig, authSlice.reducer),
+    auth: persistReducer(usersPersistConfig, usersReducer),
+    products: productsReducer.reducer,
+
   },
   middleWare,
   devTools: process.env.NODE_ENV === 'development',

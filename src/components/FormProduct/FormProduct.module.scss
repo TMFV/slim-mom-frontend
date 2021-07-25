@@ -21,6 +21,10 @@
   vertical-align: top;
 
   @include font(700, 14px, 17px, $primary-font, $primary-letter-spacing);
+
+  &:focus {
+    color: $primary-text-color;
+  }
 }
 
 .diary__volumProduct {
@@ -36,6 +40,10 @@
   text-align: right;
 
   @include font(700, 14px, 17px, $primary-font, $primary-letter-spacing);
+
+  &:focus {
+    color: $primary-text-color;
+  }
 }
 
 .diary__btnAddProduct {

@@ -1,5 +1,5 @@
 import Calendar from '../Calendar';
-import style from './Style.module.scss';
+import style from './Date.module.scss';
 
 const Date = () => {
   return (

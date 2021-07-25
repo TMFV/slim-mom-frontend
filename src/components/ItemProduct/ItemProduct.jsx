@@ -1,12 +1,23 @@
-import style from './Style.module.scss';
+import { useDispatch } from 'react-redux';
+import { deleteProducts } from '../../redux/products/products-operations';
+import style from './ItemProduct.module.scss';
 
-const ItemProduct = () => {
+const ItemProduct = ({ id }) => {
+  const dispatch = useDispatch;
+  const handleDelete = () => {
+    dispatch(deleteProducts(id));
+  };
+
   return (
     <li className={style.diary__item}>
       <p className={style.diary__itemNameProduct}>Баклажан</p>
       <p className={style.diary__itemVolumProduct}>100 г</p>
       <p className={style.diary__itemCcalProduct}>300 ккал</p>
-      <button className={style.diary__btnDelProduct} type="button">
+      <button
+        className={style.diary__btnDelProduct}
+        type="button"
+        onClick={handleDelete}
+      >
         <svg
           width="12"
           height="12"
