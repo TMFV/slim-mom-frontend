@@ -1,14 +1,15 @@
-import style from './LoginPage.module.scss';
-// import Container from '../../components/Container';
+// import style from './LoginPage.module.scss';
+import Container from '../../components/Container';
 import LoginForm from '../../components/LoginForm';
+import AuthBackground from '../../components/AuthBackground';
 
 const LoginPage = () => {
   return (
-    <div className={style.login}>
-      <div className={style.wrapper}>
+    <AuthBackground>
+      <Container>
         <LoginForm />
-      </div>
-    </div>
+      </Container>
+    </AuthBackground>
   );
 };
 

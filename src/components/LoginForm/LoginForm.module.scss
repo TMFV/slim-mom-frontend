@@ -1,13 +1,9 @@
 @import '../../assets/baseStyles.scss';
 
-// .loginisation {
-//   // background-color: rgb(39, 109, 85);
-//   min-height: 100vh;
-//   margin: 0 auto;
-//   max-width: 1280px;
-//   width: 100%;
-//   padding: 15px;
-// }
+.loginisation {
+  max-height: 100vh;
+  height: 100%;
+}
 
 .title {
   @include font(700, 14px, 0.95, $secondary-font);
@@ -18,8 +14,6 @@
 
 .form {
   width: 400px;
-  // background-color: aquamarine;
-  margin-top: 190px;
   margin-left: 115px;
 }
 

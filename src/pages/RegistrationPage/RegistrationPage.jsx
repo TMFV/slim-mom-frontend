@@ -1,14 +1,15 @@
-import style from './RegistrationPage.module.scss';
-// import Container from '../../components/Container';
+// import style from './RegistrationPage.module.scss';
+import Container from '../../components/Container';
 import RegisterForm from '../../components/RegisterForm';
+import AuthBackground from '../../components/AuthBackground';
 
 const RegistrationPage = () => {
   return (
-    <div className={style.signup}>
-      <div className={style.wrapper}>
+    <AuthBackground>
+      <Container>
         <RegisterForm />
-      </div>
-    </div>
+      </Container>
+    </AuthBackground>
   );
 };
 
