@@ -15,7 +15,9 @@
   @include for-size(desktop) {
     border-left: 2px solid $light-gray;
     height: 32px;
-    @include flexbox;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-left: 22px;
   }
 
@@ -51,10 +53,18 @@ a {
     background-color: transparent;
     width: unset;
   }
+  @include for-size(desktop) {
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+  }
 }
 
 .linksWapper {
   display: none;
+  @include for-size(desktop) {
+    display: block;
+  }
 }
 
 .logout {
