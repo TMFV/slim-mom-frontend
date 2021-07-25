@@ -1,12 +1,12 @@
-// import { createReducer } from '@reduxjs/toolkit';
-// import { combineReducers } from 'redux';
-// import  usersActions from './users-actions';
-// const { allActions } = usersActions;
+import { createReducer } from '@reduxjs/toolkit';
+import { combineReducers } from 'redux';
+import usersActions from './users-actions';
+const { allActions } = usersActions;
 
-// const loading = createReducer(false, {})
+const loading = createReducer(false, {});
 
 /* ПРИМЕР ЭКСПОРТА */
 
-// export default combineReducers({ 
-//   //allReducers
-// })
+export default combineReducers({
+  //allReducers
+});
