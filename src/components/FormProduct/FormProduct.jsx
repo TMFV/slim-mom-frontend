@@ -7,7 +7,6 @@ const FormProduct = () => {
   const [nameProduct, setNameProduct] = useState('');
   const [volumProduct, setVolumProduct] = useState('');
   const dispatch = useDispatch();
-  console.log(window.innerWidth);
 
   const handleAddProduct = event => {
     event.preventDefault();

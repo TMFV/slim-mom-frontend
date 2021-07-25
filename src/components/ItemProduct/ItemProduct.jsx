@@ -8,7 +8,6 @@ const ItemProduct = ({ isProduct: { id, name, number } }) => {
   const handleDelete = () => {
     dispatch(deleteProducts(id));
   };
-  console.log(window.innerHeight);
 
   return (
     <li className={style.diary__item}>
@@ -29,7 +28,7 @@ const ItemProduct = ({ isProduct: { id, name, number } }) => {
         >
           <path
             d="M11.8333 1.3415L10.6583 0.166504L5.99996 4.82484L1.34163 0.166504L0.166626 1.3415L4.82496 5.99984L0.166626 10.6582L1.34163 11.8332L5.99996 7.17484L10.6583 11.8332L11.8333 10.6582L7.17496 5.99984L11.8333 1.3415Z"
-            fill="black"
+            fill="#9B9FAA"
           />
         </svg>
       </button>
