@@ -1,6 +1,11 @@
 @import '../../assets/baseStyles.scss';
 
 .logowrapper {
+  transition: 500ms;
+
+  &:hover {
+    transform: scale(1.1);
+  }
   @include flexbox;
   @include for-size(desktop) {
     position: relative;

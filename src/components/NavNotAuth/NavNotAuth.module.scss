@@ -6,12 +6,13 @@
   font-size: 14px;
   font-weight: 700;
   letter-spacing: $primary-letter-spacing;
+  transition: $cubic;
 
   & a:first-child {
     margin-right: 14px;
   }
   @include for-size(desktop) {
-    border-left: 2px solid $secondary-text-color;
+    border-left: 2px solid $light-gray;
     height: 32px;
     @include flexbox;
     padding-left: 22px;
@@ -23,6 +24,9 @@
 }
 .enter {
   color: $secondary-text-color;
+  &:hover {
+    color: $primary-text-color;
+  }
 }
 
 a {

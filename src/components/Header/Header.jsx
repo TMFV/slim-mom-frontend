@@ -9,11 +9,11 @@ import styles from './Header.module.scss';
 export default function Header() {
   const isAuthenticated = false;
   return (
-    <Container>
+    <div className={styles.HeaderWrapper}>
       <div className={styles.navWrapper}>
         <Logo isAuthorized={isAuthenticated} />
         <Nav> {isAuthenticated ? <NavAuth /> : <NavNotAuth />} </Nav>
       </div>
-    </Container>
+    </div>
   );
 }
