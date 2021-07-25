@@ -1,51 +1,23 @@
 import { Formik } from 'formik';
-// import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import styles from './RegisterForm.module.scss';
 import * as yup from 'yup';
 import { NavLink } from 'react-router-dom';
 import routes from '../../routes';
-// import { useEffect } from 'react';
+import { authOperations } from '../../redux/auth';
 
 const RegisterForm = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // const onSignIn = credentials => dispatch(authOperations.logIn(credentials));
-
-  // const [email, setEmail] = useState('');
-
-  // const handleChangeEmail = event => {
-  //   setEmail(event.currentTarget.value);
-  // };
-
-  // const [password, setPassword] = useState('');
-
-  // const handleChangePassword = event => {
-  //   setPassword(event.currentTarget.value);
-  // };
-
-  // const handleSubmit = event => {
-  //   event.preventDefault();
-  //   const credentials = {
-  //     email,
-  //     password,
-  //   };
-
-  //   // onSignIn(credentials);
-  //   reset();
-  // };
-
-  // const reset = () => {
-  //   setEmail('');
-  //   setPassword('');
-  // };
+  const onRegister = credentials =>
+    dispatch(authOperations.register(credentials));
 
   const validationSchema = yup.object().shape({
     name: yup
       .string()
       .typeError('Должно быть строкой')
       .required('Обязательное поле'),
-    login: yup
+    email: yup
       .string()
       .typeError('Должно быть строкой')
       .required('Обязательное поле'),
@@ -60,9 +32,10 @@ const RegisterForm = () => {
   return (
     <div className={styles.registration}>
       <Formik
-        initialValues={{ name: '', login: '', password: '' }}
+        initialValues={{ name: '', email: '', password: '' }}
         validateOnBlur
         onSubmit={(values, { resetForm }) => {
+          onRegister(values);
           console.log(values);
           resetForm();
         }}
@@ -105,21 +78,22 @@ const RegisterForm = () => {
                 Логин*
                 <input
                   className={
-                    errors.login && touched.login
+                    errors.email && touched.email
                       ? styles.input__error
                       : styles.input
                   }
                   type="text"
-                  name="login"
+                  name="email"
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  value={values.login}
+                  value={values.email}
                 />
               </label>
-              {errors.login && touched.login && (
-                <p className={styles.notification}>{errors.login}</p>
+              {errors.email && touched.email && (
+                <p className={styles.notification}>{errors.email}</p>
               )}
             </div>
+
             <div className={styles.input__form}>
               <label className={styles.label}>
                 Пароль*
@@ -140,6 +114,7 @@ const RegisterForm = () => {
                 <p className={styles.notification}>{errors.password}</p>
               )}
             </div>
+
             <div className={styles.buttons}>
               <NavLink className={styles.btn__login} to={`${login.path}`}>
                 Вход
@@ -160,3 +135,24 @@ const RegisterForm = () => {
   );
 };
 export default RegisterForm;
+
+//  <div className={styles.input__form}>
+//               <label className={styles.label}>
+//                 Логин*
+//                 <input
+//                   className={
+//                     errors.login && touched.login
+//                       ? styles.input__error
+//                       : styles.input
+//                   }
+//                   type="text"
+//                   name="login"
+//                   onChange={handleChange}
+//                   onBlur={handleBlur}
+//                   value={values.login}
+//                 />
+//               </label>
+//               {errors.login && touched.login && (
+//                 <p className={styles.notification}>{errors.login}</p>
+//               )}
+//             </div>

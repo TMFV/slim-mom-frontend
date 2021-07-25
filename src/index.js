@@ -9,13 +9,13 @@ import 'modern-normalize/modern-normalize.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Provider store={store}>
-      <PersistGate persistor={persistor}> */}
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-    {/* </PersistGate>
-    </Provider> */}
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
