@@ -1,3 +1,22 @@
+import { NavLink } from 'react-router-dom';
+import styles from './NavNotAuth.module.scss';
 export default function NavNotAuth() {
-  return <div>nav not authorised</div>;
+  return (
+    <div className={styles.NavNotAuthWrapper}>
+      <NavLink
+        to="/login"
+        className={styles.enter}
+        activeClassName={styles.activeEnter}
+      >
+        вход
+      </NavLink>
+      <NavLink
+        to="/register"
+        className={styles.reg}
+        activeClassName={styles.activeReg}
+      >
+        регистрация
+      </NavLink>
+    </div>
+  );
 }
