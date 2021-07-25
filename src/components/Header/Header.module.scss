@@ -19,6 +19,8 @@
     padding: 17px 49px 17px 49px;
   }
   @include for-size(desktop) {
+    justify-content: start;
+
     padding: 129px 0 0 90px;
     &:after {
       content: '';
