@@ -1,0 +1,34 @@
+@import '../../assets/baseStyles.scss';
+
+.NavNotAuthWrapper {
+  text-transform: uppercase;
+  font-family: $secondary-font;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: $primary-letter-spacing;
+  transition: $cubic;
+
+  & a:first-child {
+    margin-right: 14px;
+  }
+  @include for-size(desktop) {
+    border-left: 2px solid $light-gray;
+    height: 32px;
+    @include flexbox;
+    padding-left: 22px;
+  }
+
+  .activeEnter {
+    color: $primary-text-color;
+  }
+}
+.enter {
+  color: $secondary-text-color;
+  &:hover {
+    color: $primary-text-color;
+  }
+}
+
+a {
+  text-decoration: none;
+}
