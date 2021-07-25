@@ -3,22 +3,27 @@
 .navWrapper {
   display: flex;
   align-items: center;
+  padding: 17px 49px 17px 49px;
+  margin: 0 auto;
+  justify-content: space-between;
+
+  &:after {
+    content: '';
+    border-bottom: 2px solid $light-gray;
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    width: 100vw;
+  }
   @include for-size(tablet) {
     padding: 17px 49px 17px 49px;
-    margin: 0 auto;
-    justify-content: space-between;
-    &:after {
-      content: '';
-      border-bottom: 2px solid $light-gray;
-      position: absolute;
-      bottom: 0;
-      left: -20px;
-      width: 100vw;
-    }
   }
-
   @include for-size(desktop) {
     padding: 129px 0 0 90px;
+    &:after {
+      content: '';
+      border: none;
+    }
   }
 }
 
