@@ -6,7 +6,13 @@ const LoginPage = lazy(() =>
 const RegistrationPage = lazy(() =>
   import('./pages/RegistrationPage' /*webpackChunkName: "registration-page" */),
 );
-const Diary = lazy(() => import('./pages/Diary'));
+const Diary = lazy(() =>
+  import('./pages/Diary' /*webpackChunkName: "diary-page" */),
+);
+
+const CalculatorPage = lazy(() =>
+  import('./pages/Calculator' /*webpackChunkName: "calculator-page" */),
+);
 const Page404 = lazy(() => import('./pages/Page404'));
 
 const routes = [
@@ -19,12 +25,16 @@ const routes = [
   {
     path: '/diary',
     component: Diary,
+    label: 'Дневик',
     isProtected: true,
+    isNav: true,
   },
   {
     path: '/calculator',
-    component: Calculator,
+    component: CalculatorPage,
+    label: 'Калькулятор',
     isProtected: false,
+    isNav: true,
   },
   {
     exact: false,
