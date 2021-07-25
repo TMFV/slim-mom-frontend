@@ -17,6 +17,7 @@ import logger from 'redux-logger';
 import { usersReducer } from './users';
 import { productsReducer } from './products';
 
+
 const middleWare = [
   ...getDefaultMiddleware({
     serializableCheck: {
@@ -26,7 +27,7 @@ const middleWare = [
   logger,
 ];
 
-const usersPersistConfig = {
+const authPersistConfig = {
   key: 'authToken',
   storage,
   whitelist: ['token'],
@@ -36,6 +37,7 @@ const store = configureStore({
   reducer: {
     auth: persistReducer(usersPersistConfig, usersReducer),
     products: productsReducer.reducer,
+
   },
   middleWare,
   devTools: process.env.NODE_ENV === 'development',
