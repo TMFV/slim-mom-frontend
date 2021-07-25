@@ -1,13 +1,14 @@
 @import '../../assets/baseStyles.scss';
 
-.NavNotAuthWrapper {
+.NavAuthWrapper {
   text-transform: uppercase;
   font-family: $secondary-font;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: $primary-letter-spacing;
   transition: $cubic;
-
+  display: flex;
+  position: relative;
   & a:first-child {
     margin-right: 14px;
   }
@@ -31,4 +32,42 @@
 
 a {
   text-decoration: none;
+}
+
+.userWrapper {
+  text-transform: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  width: 100vw;
+  right: -69px;
+  background-color: #eff1f3;
+  bottom: -68px;
+  height: 40px;
+}
+
+.linksWapper {
+  display: none;
+}
+
+.logout {
+  font-family: $secondary-font;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: $primary-letter-spacing;
+  transition: $cubic;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+  padding-right: 15px;
+}
+
+.userName {
+  margin-right: 15px;
+  border-right: 2px solid $light-gray;
+  padding-right: 15px;
 }
