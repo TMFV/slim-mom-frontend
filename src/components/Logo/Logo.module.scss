@@ -36,3 +36,12 @@
     margin: 0 22px 0 48px;
   }
 }
+
+.logoTextAuth {
+  @include for-size(tablet) {
+    display: block;
+  }
+  @include for-size(desktop) {
+    margin: 0 22px 0 48px;
+  }
+}
