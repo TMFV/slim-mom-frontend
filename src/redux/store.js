@@ -14,7 +14,7 @@ import logger from 'redux-logger';
 
 /* ПРИМЕР ИМПОРТА РЕДЬЮСЕРОВ*/
 
-import { usersReducer } from './users';
+import { authSlice } from './auth';
 import { productsReducer } from './products';
 
 const middleWare = [
@@ -34,7 +34,7 @@ const authPersistConfig = {
 
 const store = configureStore({
   reducer: {
-    auth: persistReducer(authPersistConfig, usersReducer),
+    auth: persistReducer(authPersistConfig, authSlice.reducer),
     products: productsReducer.reducer,
   },
   middleWare,

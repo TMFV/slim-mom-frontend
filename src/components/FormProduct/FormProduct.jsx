@@ -7,14 +7,17 @@ const FormProduct = () => {
   const [nameProduct, setNameProduct] = useState('');
   const [volumProduct, setVolumProduct] = useState('');
   const dispatch = useDispatch();
+  console.log(window.innerWidth);
 
   const handleAddProduct = event => {
     event.preventDefault();
     const newProduct = {
-      title: nameProduct,
-      weight: volumProduct,
+      name: nameProduct,
+      number: volumProduct,
     };
     dispatch(addProducts(newProduct));
+    setNameProduct('');
+    setVolumProduct('');
   };
 
   const handleChangeNameProduct = event => {

@@ -11,7 +11,7 @@
   left: 241px;
   bottom: 3px;
 
-  @include for-size(mobile-only) {
+  @include for-size(tablet-only) {
     left: 138px;
   }
 }

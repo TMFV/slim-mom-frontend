@@ -12,7 +12,7 @@ const { actions, reducer } = createSlice({
   initialState: initialProductsState,
   reducers: {
     addProductsSuccess: (state, { payload }) => {
-      state.products = [...state.contacts, payload];
+      state.products = [...state.products, payload];
       state.isLoading = false;
       state.error = null;
     },
@@ -24,9 +24,7 @@ const { actions, reducer } = createSlice({
       state.isLoading = false;
     },
     deleteProductSuccess: (state, { payload }) => {
-      state.products = payload;
-      state.isLoading = false;
-      state.error = null;
+      state.products = state.products.filter(product => product.id !== payload);
     },
     deleteProductRequest: state => {
       state.isLoading = true;

@@ -2,17 +2,19 @@ import { useDispatch } from 'react-redux';
 import { deleteProducts } from '../../redux/products/products-operations';
 import style from './ItemProduct.module.scss';
 
-const ItemProduct = ({ id }) => {
-  const dispatch = useDispatch;
+const ItemProduct = ({ isProduct: { id, name, number } }) => {
+  const dispatch = useDispatch();
+
   const handleDelete = () => {
     dispatch(deleteProducts(id));
   };
+  console.log(window.innerHeight);
 
   return (
     <li className={style.diary__item}>
-      <p className={style.diary__itemNameProduct}>Баклажан</p>
-      <p className={style.diary__itemVolumProduct}>100 г</p>
-      <p className={style.diary__itemCcalProduct}>300 ккал</p>
+      <p className={style.diary__itemNameProduct}>{name}</p>
+      <p className={style.diary__itemVolumProduct}>{`${number} г`}</p>
+      <p className={style.diary__itemCcalProduct}>{`300 г`}</p>
       <button
         className={style.diary__btnDelProduct}
         type="button"
