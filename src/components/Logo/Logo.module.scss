@@ -1,4 +1,24 @@
+@import '../../assets/baseStyles.scss';
+
 .logowrapper {
-  display: flex;
-  align-items: center;
+  @include flexbox;
+  @include for-size(desktop) {
+    position: relative;
+  }
+}
+
+.logoImage {
+  @include for-size(desktop) {
+    width: 66px;
+    height: 70px;
+    position: absolute;
+    left: 0;
+    top: -40px;
+  }
+}
+
+.logoText {
+  @include for-size(desktop) {
+    margin: 0 22px 0 48px;
+  }
 }
