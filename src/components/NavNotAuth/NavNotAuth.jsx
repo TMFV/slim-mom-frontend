@@ -12,8 +12,8 @@ export default function NavNotAuth() {
       </NavLink>
       <NavLink
         to="/register"
-        className={styles.reg}
-        activeClassName={styles.activeReg}
+        className={styles.enter}
+        activeClassName={styles.activeEnter}
       >
         регистрация
       </NavLink>
