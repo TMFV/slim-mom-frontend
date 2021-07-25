@@ -1,0 +1,42 @@
+nav {
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+}
+
+.burgerBtn {
+  width: 18px;
+  height: 12px;
+  margin-right: 15px;
+  position: relative;
+  cursor: pointer;
+}
+
+.burgerBtn:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 18px;
+  background-color: black;
+  height: 2px;
+}
+
+.burgerBtn__line {
+  position: absolute;
+  top: 9;
+  width: 18px;
+  background-color: black;
+  height: 2px;
+}
+
+.burgerBtn:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 18px;
+  background-color: black;
+  height: 2px;
+}
