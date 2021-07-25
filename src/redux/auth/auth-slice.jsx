@@ -42,7 +42,19 @@ const { actions, reducer } = createSlice({
       state.isLoading = false;
       state.isLoggedOn = false;
     },
-
+    logoutRequest: state => {
+      state.isLoading = true;
+    },
+    logoutSuccess: state => {
+      state.user = null;
+      state.token = null;
+      state.isLoading = false;
+      state.isLoggedOn = false;
+    },
+    logoutError: (state, { payload }) => {
+      state.error = payload;
+      state.isLoading = false;
+    },
     getCurrentUserRequest: (state, { payload }) => {
       state.isLoading = true;
     },

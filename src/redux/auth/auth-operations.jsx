@@ -41,6 +41,20 @@ const logIn = credentials => async dispatch => {
   }
 };
 
+const logOut = () => async dispatch => {
+  dispatch(authSlice.actions.logoutRequest());
+
+  try {
+    await apiService.logOutUser();
+
+    token.unset();
+    dispatch(authSlice.actions.logoutSuccess());
+  } catch (error) {
+    //   toast.error(error.message);
+    dispatch(authSlice.actions.logoutError(error.message));
+  }
+};
+
 const currentUser = () => async (dispatch, getState) => {
   const {
     auth: { token: persistedToken },
@@ -65,4 +79,4 @@ const currentUser = () => async (dispatch, getState) => {
 };
 
 // eslint-disable-next-line
-export default { register, logIn, currentUser };
+export default { register, logIn, logOut, currentUser };

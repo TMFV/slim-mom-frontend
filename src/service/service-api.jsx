@@ -14,6 +14,10 @@ const apiService = {
   registerUser(credentials) {
     return axios.post(`/users/signup`, credentials);
   },
+
+  logOutUser() {
+    return axios.post(`/users/logout`);
+  },
 };
 
 export default apiService;
