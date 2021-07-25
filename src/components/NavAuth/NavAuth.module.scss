@@ -35,16 +35,22 @@ a {
 }
 
 .userWrapper {
+  color: $secondary-text-color;
   text-transform: none;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   position: absolute;
   width: 100vw;
-  right: -69px;
+  right: -15px;
   background-color: #eff1f3;
   bottom: -68px;
   height: 40px;
+  @include for-size(tablet) {
+    position: static;
+    background-color: transparent;
+    width: unset;
+  }
 }
 
 .linksWapper {
@@ -64,6 +70,14 @@ a {
   cursor: pointer;
   outline: inherit;
   padding-right: 15px;
+  transition: $cubic;
+  &:hover {
+    color: $primary-text-color;
+  }
+  @include for-size(tablet) {
+    margin-right: 50px;
+    padding-right: 0;
+  }
 }
 
 .userName {
@@ -71,4 +85,8 @@ a {
   border-right: 2px solid $light-gray;
   padding-right: 15px;
   text-transform: capitalize;
+  transition: $cubic;
+  &:hover {
+    color: $primary-text-color;
+  }
 }

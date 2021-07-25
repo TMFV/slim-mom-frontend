@@ -35,13 +35,13 @@ export default function NavAuth() {
         </NavLink>
       </div>
 
-      <button>burger</button>
       <div className={styles.userWrapper}>
         <p className={styles.userName}>{name}</p>
         <button onClick={onLogOut} className={styles.logout}>
           Выйти
         </button>
       </div>
+      <button>burger</button>
     </div>
   );
 }
