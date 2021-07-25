@@ -19,6 +19,11 @@ const routes = [
   {
     path: '/diary',
     component: Diary,
+    isProtected: true,
+  },
+  {
+    path: '/calculator',
+    component: Calculator,
     isProtected: false,
   },
   {
