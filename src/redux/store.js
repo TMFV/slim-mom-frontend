@@ -17,7 +17,6 @@ import logger from 'redux-logger';
 import { usersReducer } from './users';
 import { productsReducer } from './products';
 
-
 const middleWare = [
   ...getDefaultMiddleware({
     serializableCheck: {
@@ -35,9 +34,8 @@ const authPersistConfig = {
 
 const store = configureStore({
   reducer: {
-    auth: persistReducer(usersPersistConfig, usersReducer),
+    auth: persistReducer(authPersistConfig, usersReducer),
     products: productsReducer.reducer,
-
   },
   middleWare,
   devTools: process.env.NODE_ENV === 'development',
