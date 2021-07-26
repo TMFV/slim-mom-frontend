@@ -7,7 +7,7 @@ import FormUser from '../components/FormUser';
 export default function HomePage() {
   return (
     <HomePageBackground>
-      <Header />
+      <Header goBack={false} />
       <Container>
         <FormUser />
       </Container>
