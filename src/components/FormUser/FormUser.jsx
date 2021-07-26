@@ -14,14 +14,13 @@ export default function FormUser() {
           weight: '',
           desiredWeight: '',
         }}
-        onSubmit={async values => {
-          await new Promise(r => setTimeout(r, 500));
-          alert(JSON.stringify(values, null, 2));
-        }}
+        onSubmit={async values =>
+          await localStorage.setItem('user', JSON.stringify(values, null, 2))
+        }
       >
         {({ values }) => (
           <Form>
-            <label htmlFor="height">
+            <label>
               <Field
                 id="height"
                 name="height"
@@ -57,10 +56,10 @@ export default function FormUser() {
             </label>
             <label>
               Группа крови *
-              <Field id="" type="radio" value="1" />
-              <Field id="" type="radio" value="2" />
-              <Field id="" type="radio" value="3" />
-              <Field id="" type="radio" value="4" />
+              <Field id="first" type="radio" value="1" />
+              <Field id="second" type="radio" value="2" />
+              <Field id="third" type="radio" value="3" />
+              <Field id="fourth" type="radio" value="4" />
             </label>
             <button type="submit">Похудеть</button>
           </Form>
