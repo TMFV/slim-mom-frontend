@@ -3,10 +3,12 @@ import { useDispatch } from 'react-redux';
 import { addProducts } from '../../redux/products/products-operations';
 import style from './FormProduct.module.scss';
 
-const FormProduct = () => {
+const FormProduct = ({ className, onHandleToggleModal }) => {
   const [nameProduct, setNameProduct] = useState('');
   const [volumProduct, setVolumProduct] = useState('');
   const dispatch = useDispatch();
+
+  const isModal = onHandleToggleModal ? true : false;
 
   const handleAddProduct = event => {
     event.preventDefault();
@@ -17,6 +19,9 @@ const FormProduct = () => {
     dispatch(addProducts(newProduct));
     setNameProduct('');
     setVolumProduct('');
+    if (isModal) {
+      onHandleToggleModal();
+    }
   };
 
   const handleChangeNameProduct = event => {
@@ -28,8 +33,9 @@ const FormProduct = () => {
     event.preventDefault();
     setVolumProduct(event.target.value);
   };
+
   return (
-    <form className={style.diary__form} onSubmit={handleAddProduct}>
+    <form className={className} onSubmit={handleAddProduct}>
       <input
         className={style.diary__nameProduct}
         name={nameProduct}
@@ -48,7 +54,7 @@ const FormProduct = () => {
         onChange={handleChangeVolumProduct}
       />
       <button className={style.diary__btnAddProduct} type="submit">
-        +
+        {document.documentElement.clientWidth < 768 ? 'Добавить' : '+'}
       </button>
     </form>
   );
