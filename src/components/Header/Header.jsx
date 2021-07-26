@@ -7,24 +7,24 @@ import { useHistory } from 'react-router-dom';
 
 import styles from './Header.module.scss';
 
-export default function Header(goBack) {
+export default function Header({ goBack }) {
   let history = useHistory();
   function handleGoBack() {
     history.push('/');
     goBack = false;
   }
 
-  const isAuthenticated = true;
+  const isAuthenticated = false;
   return (
     <div className={styles.HeaderWrapper}>
       <div className={styles.navWrapper}>
         <Logo isAuthorized={isAuthenticated} />
         <Nav> {isAuthenticated ? <NavAuth /> : <NavNotAuth />} </Nav>
-        <div className={styles.arrowBack}>
+        {goBack && (
           <button type="button" className={styles.arrowBtn}>
-            {!goBack && <ArrowBack onClick={handleGoBack} />}
+            <ArrowBack onClick={handleGoBack} />
           </button>
-        </div>
+        )}
       </div>
     </div>
   );

@@ -42,9 +42,6 @@
   position: absolute;
   left: 0;
   bottom: -44px;
-}
-
-.arrowBack {
   @include for-size(tablet) {
     display: none;
   }
