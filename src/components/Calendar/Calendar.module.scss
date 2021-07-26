@@ -9,7 +9,7 @@
 
   @include font(700, 34px, 41px, $primary-font, $primary-letter-spacing);
 
-  @include for-size(mobile-only) {
+  @include for-size(tablet-only) {
     width: 138px;
     height: 20px;
     @include font(700, 18px, 22px, $primary-font, $primary-letter-spacing);

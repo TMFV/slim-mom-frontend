@@ -15,6 +15,8 @@ const FormProduct = () => {
       number: volumProduct,
     };
     dispatch(addProducts(newProduct));
+    setNameProduct('');
+    setVolumProduct('');
   };
 
   const handleChangeNameProduct = event => {

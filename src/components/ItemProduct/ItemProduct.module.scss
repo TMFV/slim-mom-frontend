@@ -2,7 +2,18 @@
 
 .diary__item {
   display: flex;
+  margin-bottom: 15px;
   list-style: none;
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include for-size(tablet-only) {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .diary__itemNameProduct {
@@ -20,6 +31,13 @@
   vertical-align: top;
 
   @include font(400, 14px, 17px, $primary-font, $primary-letter-spacing);
+
+  @include for-size(tablet-only) {
+    width: 138px;
+    height: 26px;
+    margin-right: 9px;
+    padding-bottom: 10px;
+  }
 }
 
 .diary__itemVolumProduct {
@@ -36,6 +54,13 @@
   text-align: right;
 
   @include font(400, 14px, 17px, $primary-font, $primary-letter-spacing);
+
+  @include for-size(tablet-only) {
+    width: 50px;
+    height: 26px;
+    margin-right: 10px;
+    padding-bottom: 10px;
+  }
 }
 
 .diary__itemCcalProduct {
@@ -52,6 +77,13 @@
   text-align: right;
 
   @include font(400, 14px, 17px, $primary-font, $primary-letter-spacing);
+
+  @include for-size(tablet-only) {
+    width: 60px;
+    height: 26px;
+    margin-right: 10px;
+    padding-bottom: 10px;
+  }
 }
 
 .diary__btnDelProduct {

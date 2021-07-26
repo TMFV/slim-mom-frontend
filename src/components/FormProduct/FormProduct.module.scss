@@ -5,6 +5,10 @@
   margin-top: 60px;
   margin-bottom: 60px;
   align-items: center;
+
+  @include for-size(tablet-only) {
+    display: none;
+  }
 }
 
 .diary__nameProduct {
