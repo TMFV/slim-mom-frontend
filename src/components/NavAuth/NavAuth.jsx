@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useCallback } from 'react';
 import styles from './NavAuth.module.scss';
+import BurgerBtn from '../BurgerBtn';
 
 export default function NavAuth() {
   const dispatch = useDispatch();
@@ -41,7 +42,9 @@ export default function NavAuth() {
           Выйти
         </button>
       </div>
-      <button>burger</button>
+      <div className={styles.burgerWrapper}>
+        <BurgerBtn />
+      </div>
     </div>
   );
 }

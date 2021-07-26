@@ -31,3 +31,18 @@
 .HeaderWrapper {
   position: relative;
 }
+
+.arrowBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+  padding: 15px;
+  position: absolute;
+  left: 0;
+  bottom: -44px;
+  @include for-size(tablet) {
+    display: none;
+  }
+}

@@ -8,9 +8,12 @@
   letter-spacing: $primary-letter-spacing;
   transition: $cubic;
   display: flex;
-  position: relative;
   & a:first-child {
     margin-right: 14px;
+  }
+
+  @include for-size(tablet) {
+    margin-left: auto;
   }
   @include for-size(desktop) {
     border-left: 2px solid $light-gray;
@@ -44,9 +47,9 @@ a {
   align-items: center;
   position: absolute;
   width: 100vw;
-  right: -15px;
+  right: 0;
   background-color: #eff1f3;
-  bottom: -68px;
+  bottom: -40px;
   height: 40px;
 
   @include for-size(tablet) {
@@ -81,7 +84,6 @@ a {
   cursor: pointer;
   outline: inherit;
   padding-right: 15px;
-  transition: $cubic;
   &:hover {
     color: $primary-text-color;
   }
@@ -101,3 +103,7 @@ a {
     color: $primary-text-color;
   }
 }
+
+// * {
+//   outline: solid red;
+// }
