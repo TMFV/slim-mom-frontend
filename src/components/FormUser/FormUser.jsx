@@ -9,7 +9,10 @@ export default function FormUser() {
       </h1>
       <Formik
         initialValues={{
-          picked: '',
+          height: '',
+          age: '',
+          weight: '',
+          desiredWeight: '',
         }}
         onSubmit={async values => {
           await new Promise(r => setTimeout(r, 500));
@@ -18,49 +21,52 @@ export default function FormUser() {
       >
         {({ values }) => (
           <Form>
-            <div id="my-radio-group">Picked</div>
-            <div role="group" aria-labelledby="my-radio-group">
-              <label>
-                <Field type="radio" name="picked" value="One" />
-                One
-              </label>
-              <label>
-                <Field type="radio" name="picked" value="Two" />
-                Two
-              </label>
-              <div>Picked: {values.picked}</div>
-            </div>
-
-            <button type="submit">Submit</button>
+            <label htmlFor="height">
+              <Field
+                id="height"
+                name="height"
+                placeholder="Рост *"
+                type="text"
+                className={styles.input}
+              />
+            </label>
+            <label>
+              <Field
+                id="age"
+                name="age"
+                className={styles.input}
+                placeholder="Возраст *"
+              />
+            </label>
+            <label>
+              <Field
+                id="weight"
+                name="weight"
+                className={styles.input}
+                placeholder="Текущий вес *"
+              />
+            </label>
+            <label>
+              <Field
+                id="desiredWeight"
+                name="desiredWeight"
+                type="text"
+                className={styles.input}
+                placeholder="Желаемый вес *"
+              />
+            </label>
+            <label>
+              Группа крови *
+              <Field id="" type="radio" value="1" />
+              <Field id="" type="radio" value="2" />
+              <Field id="" type="radio" value="3" />
+              <Field id="" type="radio" value="4" />
+            </label>
+            <button type="submit">Похудеть</button>
           </Form>
         )}
       </Formik>
-      <form className={styles.formUser}>
-        <label className={styles.label}>
-          Рост *
-          <input type="text" />
-        </label>
-        <label className={styles.label}>
-          Возраст *
-          <input type="text" />
-        </label>
-        <label className={styles.label}>
-          Текущий вес *
-          <input type="text" />
-        </label>
-        <label className={styles.label}>
-          Желаемый вес *
-          <input type="text" />
-        </label>
-        <label className={styles.label}>
-          Группа крови *
-          <input type="radio" value="1" />
-          <input type="radio" value="2" />
-          <input type="radio" value="3" />
-          <input type="radio" value="4" />
-        </label>
-        <button type="submit">Похудеть</button>
-      </form>
+      <form className={styles.formUser}></form>
     </div>
   );
 }
