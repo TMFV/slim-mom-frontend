@@ -48,6 +48,7 @@ a {
   background-color: #eff1f3;
   bottom: -68px;
   height: 40px;
+
   @include for-size(tablet) {
     position: static;
     background-color: transparent;

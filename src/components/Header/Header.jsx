@@ -7,7 +7,7 @@ import NavNotAuth from '../NavNotAuth';
 import styles from './Header.module.scss';
 
 export default function Header() {
-  const isAuthenticated = true;
+  const isAuthenticated = false;
   return (
     <div className={styles.HeaderWrapper}>
       <div className={styles.navWrapper}>
