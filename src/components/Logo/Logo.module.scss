@@ -13,6 +13,11 @@
 }
 
 .logoImage {
+  @include for-size(tablet) {
+    width: 46px;
+    height: 44px;
+  }
+
   @include for-size(desktop) {
     width: 66px;
     height: 70px;
@@ -22,7 +27,20 @@
   }
 }
 
-.logoText {
+.logoTextNotAuth {
+  display: none;
+  @include for-size(tablet) {
+    display: block;
+  }
+  @include for-size(desktop) {
+    margin: 0 22px 0 48px;
+  }
+}
+
+.logoTextAuth {
+  @include for-size(tablet) {
+    display: block;
+  }
   @include for-size(desktop) {
     margin: 0 22px 0 48px;
   }

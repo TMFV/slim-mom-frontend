@@ -8,9 +8,12 @@ export default function Logo({ isAuthorized = false }) {
   return (
     <Link className={styles.logowrapper} to="/">
       <LogoImage width={46} height={44} className={styles.logoImage} />
-      {!isAuthorized && (
-        <LogoText width={107} height={16} className={styles.logoText} />
-      )}
+
+      <LogoText
+        width={107}
+        height={16}
+        className={isAuthorized ? styles.logoTextAuth : styles.logoTextNotAuth}
+      />
     </Link>
   );
 }

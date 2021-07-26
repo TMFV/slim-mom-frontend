@@ -13,8 +13,19 @@
 }
 
 .form {
-  width: 400px;
-  margin-left: 115px;
+  @include flexbox();
+  flex-direction: column;
+  margin-top: 40px;
+  @include for-size(tablet) {
+    display: block;
+    width: 400px;
+    margin-top: 190px;
+    margin-left: 90px;
+  }
+  @include for-size(desktop) {
+    margin-top: 210px;
+    margin-left: 115px;
+  }
 }
 
 .input__form {
@@ -68,16 +79,22 @@
 
 .buttons {
   @include flexbox();
-  margin-top: 60px;
+  flex-direction: column;
+  @include for-size(tablet) {
+    @include flexbox(start, start);
+    flex-direction: row;
+    margin-top: 60px;
+  }
 }
 
 .btn__login {
+  margin-bottom: 20px;
   @include flexbox();
   width: 176px;
   background-color: $accent-color;
   color: $accent-text-color;
   padding: 13px 0;
-  margin: 0 30px 0 0;
+
   @include font(700, 14px, 1.21);
   border: 2px solid transparent;
   cursor: pointer;
@@ -96,6 +113,10 @@
   &:hover {
     opacity: 1;
   }
+
+  @include for-size(tablet) {
+    margin: 0 30px 0 0;
+  }
 }
 
 .btn__register {
@@ -104,7 +125,6 @@
   background-color: $primary-bg-color;
   color: $accent-color;
   padding: 13px 0;
-  margin: 0 30px 0 0;
   @include font(700, 14px, 1.21);
   border: 2px solid $accent-color;
   cursor: pointer;

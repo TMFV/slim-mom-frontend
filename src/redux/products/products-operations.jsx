@@ -12,6 +12,7 @@ const {
 
 const addProducts = payload => async dispatch => {
   dispatch(addProductsRequest());
+  console.log(payload);
   try {
     const { data } = await serviceAPI.addProductQuery(payload);
     dispatch(addProductsSuccess(data));
