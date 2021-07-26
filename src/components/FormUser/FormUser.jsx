@@ -8,14 +8,16 @@ export default function FormUser() {
         Просчитай свою суточную норму калорий прямо сейчас
       </h1>
       <Formik
+        className={styles.formWrapper}
         initialValues={{
           height: '',
           age: '',
           weight: '',
           desiredWeight: '',
+          bloodGroup: '',
         }}
         onSubmit={async values =>
-          await localStorage.setItem('user', JSON.stringify(values, null, 2))
+          await localStorage.setItem('user', JSON.stringify(values))
         }
       >
         {({ values }) => (
@@ -54,14 +56,27 @@ export default function FormUser() {
                 placeholder="Желаемый вес *"
               />
             </label>
-            <label>
+
+            <div id="bloodGroup" className={styles.label}>
               Группа крови *
-              <Field id="first" type="radio" value="1" />
-              <Field id="second" type="radio" value="2" />
-              <Field id="third" type="radio" value="3" />
-              <Field id="fourth" type="radio" value="4" />
-            </label>
-            <button type="submit">Похудеть</button>
+            </div>
+            <div role="group" aria-labelledby="bloodGroup">
+              <label>
+                <Field type="radio" name="bloodGroup" value="1" />1
+              </label>
+              <label>
+                <Field type="radio" name="bloodGroup" value="2" />2
+              </label>
+              <label>
+                <Field type="radio" name="bloodGroup" value="3" />3
+              </label>
+              <label>
+                <Field type="radio" name="bloodGroup" value="4" />4
+              </label>
+            </div>
+            <button type="submit" className={styles.btnSubmit}>
+              Похудеть
+            </button>
           </Form>
         )}
       </Formik>
