@@ -1,3 +1,41 @@
+@import '../../assets/baseStyles.scss';
+
 .diary {
-  padding: 137px 30px 60px 115px;
+  @include for-size(desktop) {
+    // padding: 137px 30px 60px 115px;
+    padding-top: 137px;
+    padding-right: 30px;
+    padding-bottom: 60px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 600px;
+  }
+
+  @include for-size(desktop-only) {
+    // padding: 100px 18px 60px 92px;
+    padding-top: 137px;
+    padding-bottom: 60px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 589px;
+  }
+
+  @include for-size(tablet-only) {
+    padding: 40px 0px 170px 0px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 312px;
+  }
+
+  // @media screen and (min-width: 480px) {
+  //   width: 480px;
+  // }
+
+  // @media screen and (min-width: 768px) {
+  //   width: 750px;
+  // }
+
+  // @media screen and (min-width: 1280px) {
+  //   width: 1182px;
+  // }
 }

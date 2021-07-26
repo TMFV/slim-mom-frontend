@@ -2,6 +2,8 @@
 
 .diary__lableDate {
   position: relative;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .diary__iconDate {
@@ -11,7 +13,8 @@
   left: 241px;
   bottom: 3px;
 
-  @include for-size(mobile-only) {
+  @include for-size(tablet-only) {
+    top: 1px;
     left: 138px;
   }
 }

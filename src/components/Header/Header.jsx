@@ -13,7 +13,6 @@ export default function Header({ goBack }) {
     history.push('/');
     goBack = false;
   }
-
   const isAuthenticated = false;
   return (
     <div className={styles.HeaderWrapper}>
