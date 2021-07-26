@@ -8,11 +8,13 @@ const {
   deleteProductSuccess,
   deleteProductRequest,
   deleteProductError,
+  downloadProductsSuccess,
+  downloadProductsRequest,
+  downloadProductsError,
 } = productsReducer.actions;
 
 const addProducts = payload => async dispatch => {
   dispatch(addProductsRequest());
-  console.log(payload);
   try {
     const { data } = await serviceAPI.addProductQuery(payload);
     dispatch(addProductsSuccess(data));
@@ -31,4 +33,14 @@ const deleteProducts = id => async dispatch => {
   }
 };
 
-export { addProducts, deleteProducts };
+const dowloadProducts = () => async dispatch => {
+  dispatch(downloadProductsRequest());
+  try {
+    const { data } = await serviceAPI.getProductsQuery();
+    dispatch(downloadProductsSuccess(data));
+  } catch (error) {
+    dispatch(downloadProductsError(error.message));
+  }
+};
+
+export { addProducts, deleteProducts, dowloadProducts };

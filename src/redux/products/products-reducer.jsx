@@ -12,7 +12,6 @@ const { actions, reducer } = createSlice({
   initialState: initialProductsState,
   reducers: {
     addProductsSuccess: (state, { payload }) => {
-
       console.log(payload);
 
       state.products = [...state.products, payload];
@@ -33,6 +32,18 @@ const { actions, reducer } = createSlice({
       state.isLoading = true;
     },
     deleteProductError: (state, { payload }) => {
+      state.error = payload;
+      state.isLoading = false;
+    },
+    downloadProductsSuccess: (state, { payload }) => {
+      state.products = payload;
+      state.isLoading = false;
+      state.error = null;
+    },
+    downloadProductsRequest: state => {
+      state.isLoading = true;
+    },
+    downloadProductsError: (state, { payload }) => {
       state.error = payload;
       state.isLoading = false;
     },
