@@ -20,7 +20,7 @@ export default function FormUser() {
       setModalActive(false);
     }
   };
-  
+
   return (
     <div className={styles.formWrapper}>
       <h1 className={styles.header}>
@@ -89,7 +89,7 @@ export default function FormUser() {
                     type="radio"
                     name="bloodGroup"
                     value="1"
-                    checked="true"
+                    checked={true}
                   />
                   1
                 </label>
@@ -123,7 +123,11 @@ export default function FormUser() {
               </div>
             </div>
 
-            <button type="submit" className={styles.btnSubmit}  onClick={toggleModal}>
+            <button
+              type="submit"
+              className={styles.btnSubmit}
+              onClick={toggleModal}
+            >
               Похудеть
             </button>
           </Form>
