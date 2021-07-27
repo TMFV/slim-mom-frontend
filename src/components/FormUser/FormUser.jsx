@@ -4,10 +4,21 @@ import * as Yup from 'yup';
 
 const SignupSchema = Yup.object().shape({
   height: Yup.string()
-    .min(2, 'Too Short!')
-    .max(70, 'Too Long!')
-    .required('Required'),
-  age: Yup.string().email('Invalid email').required('Required'),
+    .min(2, 'Слишком мало...')
+    .max(3, 'Слишком много...')
+    .required('Заполните все поля'),
+  age: Yup.string()
+    .min(1, 'Слишком мало...')
+    .max(3, 'Слишком много...')
+    .required('Заполните все поля'),
+  weight: Yup.string()
+    .min(2, 'Слишком мало...')
+    .max(3, 'Слишком много...')
+    .required('Заполните все поля'),
+  desiredWeight: Yup.string()
+    .min(1, 'Слишком мало...')
+    .max(3, 'Слишком много...')
+    .required('Заполните все поля'),
 });
 
 export default function FormUser() {
@@ -30,12 +41,12 @@ export default function FormUser() {
           await localStorage.setItem('user', JSON.stringify(values))
         }
       >
-        {({ values, handleSubmit, handleChange, errors, touched }) => (
+        {({ values, handleSubmit, handleChange }) => (
           <Form className={styles.form} onSubmit={handleSubmit}>
             <label>
               <Field
                 value={values.height}
-                // onChange={handleChange}
+                onChange={handleChange}
                 id="height"
                 name="height"
                 placeholder="Рост *"
@@ -46,6 +57,7 @@ export default function FormUser() {
                 {msg => <p className={styles.notification}>{msg}</p>}
               </ErrorMessage>
             </label>
+
             <label className={styles.age}>
               <Field
                 value={values.age}
@@ -55,7 +67,11 @@ export default function FormUser() {
                 className={styles.input}
                 placeholder="Возраст *"
               />
+              <ErrorMessage name="age">
+                {msg => <p className={styles.notification}>{msg}</p>}
+              </ErrorMessage>
             </label>
+
             <label className={styles.weight}>
               <Field
                 value={values.weight}
@@ -65,7 +81,11 @@ export default function FormUser() {
                 className={styles.input}
                 placeholder="Текущий вес *"
               />
+              <ErrorMessage name="weight">
+                {msg => <p className={styles.notification}>{msg}</p>}
+              </ErrorMessage>
             </label>
+
             <label>
               <Field
                 value={values.desiredWeight}
@@ -76,6 +96,9 @@ export default function FormUser() {
                 className={styles.input}
                 placeholder="Желаемый вес *"
               />
+              <ErrorMessage name="desiredWeight">
+                {msg => <p className={styles.notification}>{msg}</p>}
+              </ErrorMessage>
             </label>
 
             <div id="bloodGroup" className={styles.label}>

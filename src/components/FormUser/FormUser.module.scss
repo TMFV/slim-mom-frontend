@@ -96,9 +96,8 @@
 }
 
 .notification {
-  position: absolute;
-  bottom: -30%;
-  left: 0;
+  position: relative;
+  top: -20px;
   margin: 0;
   width: 150px;
   @include font(400, 10px, 1.16);
