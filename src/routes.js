@@ -26,7 +26,7 @@ const routes = [
     path: '/diary',
     component: Diary,
     label: 'Дневик',
-    isProtected: true,
+    isProtected: false,
     isNav: true,
   },
   {

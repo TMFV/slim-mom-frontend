@@ -1,15 +1,16 @@
 @import '../../assets/baseStyles.scss';
+@import '../../pages/Diary/Diary.module.scss';
 
-.diary__form {
-  display: flex;
-  margin-top: 60px;
-  margin-bottom: 60px;
-  align-items: center;
+// .diary__form {
+//   display: flex;
+//   margin-top: 60px;
+//   margin-bottom: 60px;
+//   align-items: center;
 
-  @include for-size(tablet-only) {
-    display: none;
-  }
-}
+//   @include for-size(tablet-only) {
+//     display: none;
+//   }
+// }
 
 .diary__nameProduct {
   width: 242px;
@@ -28,6 +29,10 @@
 
   &:focus {
     color: $primary-text-color;
+  }
+  @include for-size(tablet-only) {
+    width: 100%;
+    margin-right: 0;
   }
 }
 
@@ -48,6 +53,13 @@
   &:focus {
     color: $primary-text-color;
   }
+  @include for-size(tablet-only) {
+    margin-top: 30px;
+    margin-right: 0;
+    margin-bottom: 60px;
+    width: 100%;
+    text-align: left;
+  }
 }
 
 .diary__btnAddProduct {
@@ -65,4 +77,13 @@
 
   box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
   cursor: pointer;
+
+  @include for-size(tablet-only) {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 176px;
+    height: 44px;
+    border-radius: 30px;
+  }
 }
