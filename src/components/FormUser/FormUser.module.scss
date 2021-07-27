@@ -57,11 +57,6 @@
   color: $secondary-text-color;
 }
 
-.label__error {
-  @include font(700, 14px, 1.21);
-  color: rgb(184, 0, 0);
-}
-
 .input {
   display: block;
   width: 80%;
@@ -81,18 +76,6 @@
   &:focus {
     border-bottom: 2px solid $secondary-text-color;
   }
-}
-
-.input__error {
-  display: block;
-  width: 80%;
-  padding: 5px;
-  margin: 0 0 40px 0;
-  border: none;
-  border-bottom: 1px solid rgb(184, 0, 0);
-  background: transparent;
-  @include font(400, 12px, 1.41);
-  outline: transparent;
 }
 
 .notification {
@@ -118,13 +101,6 @@
   box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
   border-radius: 30px;
   transition: $cubic;
-
-  &:disabled {
-    &:hover {
-      opacity: 0.4;
-    }
-    opacity: 0.4;
-  }
 
   &:hover {
     opacity: 0.7;
