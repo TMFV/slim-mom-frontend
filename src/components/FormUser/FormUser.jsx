@@ -49,9 +49,10 @@ export default function FormUser() {
           desiredWeight: '',
           bloodGroup: '',
         }}
-        onSubmit={async values =>
-          await localStorage.setItem('user', JSON.stringify(values))
-        }
+        onSubmit={async (values, { resetForm }) => {
+          await localStorage.setItem('user', JSON.stringify(values));
+          resetForm();
+        }}
       >
         {({ values, handleSubmit, isValid, dirty, handleChange }) => (
           <Form className={styles.form} onSubmit={handleSubmit}>
