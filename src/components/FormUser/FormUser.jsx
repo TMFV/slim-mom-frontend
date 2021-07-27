@@ -1,7 +1,26 @@
+import React, { useState, useEffect } from 'react';
 import styles from './FormUser.module.scss';
 import { Formik, Field, Form } from 'formik';
+import Modal from '../Modal/Modal';
+import products from '../../JsonData/products.json';
 
 export default function FormUser() {
+  const [modalActive, setModalActive] = useState(false);
+  const toggleModal = () => setModalActive(prevModalActive => !prevModalActive);
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+  const handleKeyDown = event => {
+    if (event.code === 'Escape') {
+      setModalActive(false);
+    }
+  };
+  
   return (
     <div className={styles.formWrapper}>
       <h1 className={styles.header}>
@@ -62,11 +81,21 @@ export default function FormUser() {
               <Field id="" type="radio" value="3" />
               <Field id="" type="radio" value="4" />
             </label>
-            <button type="submit">Похудеть</button>
+            <button type="submit" onClick={toggleModal}>
+              Похудеть
+            </button>
           </Form>
         )}
       </Formik>
       <form className={styles.formUser}></form>
+
+      {modalActive && (
+        <Modal
+          products={products}
+          active={modalActive}
+          setActive={setModalActive}
+        />
+      )}
     </div>
   );
 }
