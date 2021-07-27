@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialProductsState = {
   products: [],
   isLoading: false,
+  searchList: [],
   filter: '',
   error: null,
 };
@@ -12,8 +13,6 @@ const { actions, reducer } = createSlice({
   initialState: initialProductsState,
   reducers: {
     addProductsSuccess: (state, { payload }) => {
-      console.log(payload);
-
       state.products = [...state.products, payload];
       state.isLoading = false;
       state.error = null;
@@ -44,6 +43,16 @@ const { actions, reducer } = createSlice({
       state.isLoading = true;
     },
     downloadProductsError: (state, { payload }) => {
+      state.error = payload;
+      state.isLoading = false;
+    },
+    searchProductsSuccess: (state, { payload }) => {
+      state.searchList = payload;
+    },
+    searchProductsRequest: (state, { payload }) => {
+      state.isLoading = true;
+    },
+    searchProductsError: (state, { payload }) => {
       state.error = payload;
       state.isLoading = false;
     },

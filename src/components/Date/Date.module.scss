@@ -1,7 +1,11 @@
 @import '../../assets/baseStyles.scss';
 
-.diary__lableDate {
+.diary__date {
   position: relative;
+}
+
+.diary__lableDate {
+  // position: relative;
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
@@ -11,8 +15,10 @@
   position: absolute;
   width: 20px;
   height: 20px;
+  top: 10px;
   left: 256px;
   bottom: 3px;
+  cursor: pointer;
 
   @include for-size(tablet-only) {
     top: 1px;

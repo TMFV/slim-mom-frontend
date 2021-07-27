@@ -1,5 +1,6 @@
-import serviceAPI from '../../serviceAPI';
+import serviceAPI from '../../service';
 import { productsReducer } from '.';
+import axios from 'axios';
 
 const {
   addProductsSuccess,
@@ -11,6 +12,9 @@ const {
   downloadProductsSuccess,
   downloadProductsRequest,
   downloadProductsError,
+  searchProductsSuccess,
+  searchProductsRequest,
+  searchProductsError,
 } = productsReducer.actions;
 
 const addProducts = payload => async dispatch => {
@@ -43,4 +47,19 @@ const dowloadProducts = () => async dispatch => {
   }
 };
 
-export { addProducts, deleteProducts, dowloadProducts };
+const searchProducts = value => async dispatch => {
+  dispatch(searchProductsRequest());
+  try {
+    // const { data } = await serviceAPI.searchProductQuery(value);
+    const data = await serviceAPI.searchProductQuery(value);
+    if (
+      data.length < 10
+        ? dispatch(searchProductsSuccess(data))
+        : console.log('Введите точнее запрос')
+    );
+  } catch (error) {
+    dispatch(searchProductsError(error.message));
+  }
+};
+
+export { addProducts, deleteProducts, dowloadProducts, searchProducts };

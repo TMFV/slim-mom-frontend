@@ -13,7 +13,7 @@ const Calendar = () => {
       dateFormat="dd.MM.yyyy"
       onChange={date => setStartDate(date)}
       minDate={new Date()}
-    />
+    ></DatePicker>
   );
 };
 

@@ -2,6 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 
 const getStateProducts = state => state.products.products;
 const getStateFilterProducts = state => state.products.filter;
+const getSearchList = state => state.products.searchList;
 
 const getFilterProducts = createSelector(
   [getStateProducts, getStateFilterProducts],
@@ -13,4 +14,4 @@ const getFilterProducts = createSelector(
   },
 );
 
-export default { getStateProducts, getFilterProducts };
+export default { getStateProducts, getFilterProducts, getSearchList };
