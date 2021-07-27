@@ -23,13 +23,7 @@
   font-size: 14px;
   line-height: 17px;
   letter-spacing: $primary-letter-spacing;
-
   color: $secondary-text-color;
-}
-
-.input__form {
-  position: relative;
-  width: 240px;
 }
 
 .input::placeholder,
@@ -51,7 +45,7 @@
   border: none;
   border-bottom: 1px solid $light-gray;
   background: transparent;
-  @include font(400, 12px, 1.41);
+  @include font(500, 14px, 1.41);
   outline: transparent;
 }
 
@@ -83,6 +77,7 @@
   background-color: $accent-color;
   color: $accent-text-color;
   padding: 13px 0;
+  display: block;
 
   @include font(700, 14px, 1.21);
   border: 2px solid transparent;
