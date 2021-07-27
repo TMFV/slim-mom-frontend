@@ -70,6 +70,7 @@ export default function FormUser() {
                     type="radio"
                     name="bloodGroup"
                     value="1"
+                    checked="true"
                   />
                   1
                 </label>
