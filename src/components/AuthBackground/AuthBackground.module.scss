@@ -1,28 +1,87 @@
 @import '../../assets/baseStyles.scss';
 
 .background {
+  position: relative;
+  overflow: hidden;
   width: 100%;
   max-width: 100%;
+  transition: 250ms cubic-bezier(linear);
   @include for-size(tablet) {
     min-height: 100vh;
-    background-image: url('../../assets/pictures/Strawberry-Big-PNG.png'),
-      url('../../assets/pictures/banana.png'),
-      url('../../assets/pictures/auth-leaves-tablet.png'),
-      url('../../assets/pictures/shapeGrayAuthTablet.svg');
-    background-position: bottom 230px right -85px, bottom -50px right -90px,
-      bottom 240px right 0px, bottom 0px right 0px;
+    background-image: url('../../assets/pictures/shapeGrayAuthTablet.svg');
+    background-position: bottom 0px right 0px;
     background-repeat: no-repeat;
-    background-size: 380px auto, 580px auto, 740px auto, 70% auto;
+    background-size: 70% auto;
   }
   @include for-size(desktop) {
     min-height: 100vh;
-    background-image: url('../../assets/pictures/Strawberry-Big-PNG@2x.png'),
-      url('../../assets/pictures/banana-desktop.png'),
-      url('../../assets/pictures/auth-leaves-desktop.png'),
-      url('../../assets/pictures/shapeGrayAuth.svg');
-    background-position: top 200px right 40px, bottom -50px right -220px,
-      bottom 0px right 250px, bottom 0px right 0px;
+    background-image: url('../../assets/pictures/shapeGrayAuth.svg');
+    background-position: bottom 0px right 0px;
     background-repeat: no-repeat;
-    background-size: 380px auto, 880px auto, 840px auto, 62% auto;
+    background-size: 62% auto;
+    //   min-height: 100vh;
+    //   background-image: url('../../assets/pictures/Strawberry-Big-PNG@2x.png'),
+    //     url('../../assets/pictures/banana-desktop.png'),
+    //     url('../../assets/pictures/auth-leaves-desktop.png'),
+    //     url('../../assets/pictures/shapeGrayAuth.svg');
+    //   background-position: top 200px right 40px, bottom -50px right -220px,
+    //     bottom 0px right 250px, bottom 0px right 0px;
+    //   background-repeat: no-repeat;
+    //   background-size: 380px auto, 880px auto, 840px auto, 62% auto;
+  }
+}
+
+.strowberry {
+  display: none;
+  transition: 250ms cubic-bezier(linear);
+  @include for-size(tablet) {
+    display: block;
+    position: absolute;
+    right: -85px;
+    bottom: 200px;
+  }
+  @include for-size(desktop) {
+    display: block;
+    position: absolute;
+    right: 45px;
+    top: 150px;
+  }
+}
+
+.banana {
+  display: none;
+  transition: 250ms cubic-bezier(linear);
+  @include for-size(tablet) {
+    display: block;
+    position: absolute;
+    right: -300px;
+    bottom: -100px;
+    pointer-events: none;
+  }
+  @include for-size(desktop) {
+    display: block;
+    position: absolute;
+    right: -220px;
+    bottom: -50px;
+    pointer-events: none;
+  }
+}
+
+.leaves {
+  display: none;
+  transition: 250ms cubic-bezier(linear);
+  @include for-size(tablet) {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 250px;
+    pointer-events: none;
+  }
+  @include for-size(desktop) {
+    display: block;
+    position: absolute;
+    right: 250px;
+    bottom: 0px;
+    pointer-events: none;
   }
 }
