@@ -13,7 +13,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
   }
   @include for-size(tablet) {
     padding: 17px 49px 17px 49px;

@@ -21,7 +21,7 @@ export default function FormUser() {
         }
       >
         {({ values }) => (
-          <Form>
+          <Form className={styles.form}>
             <label>
               <Field
                 id="height"

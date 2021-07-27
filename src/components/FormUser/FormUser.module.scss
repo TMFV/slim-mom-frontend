@@ -2,6 +2,9 @@
 
 .formWrapper {
   width: 100%;
+  @include for-size(tablet) {
+    padding: 100px 67px 60px 67px;
+  }
   @include for-size(desktop) {
     padding: 146px 0 0 90px;
     width: 75vw;
@@ -15,6 +18,10 @@
   line-height: 26px;
   margin: 0;
   padding: 30px 0;
+  @include for-size(tablet) {
+    @include font(700, 30px, 1.21);
+    padding: 0 0 60px 0;
+  }
 }
 
 .formUser {
@@ -24,6 +31,14 @@
   line-height: 17px;
   letter-spacing: $primary-letter-spacing;
   color: $secondary-text-color;
+}
+
+.form {
+  @include for-size(tablet) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
 }
 
 .input::placeholder,
@@ -138,3 +153,7 @@
     visibility: visible;
   }
 }
+
+// * {
+//   outline: orangered solid;
+// }
