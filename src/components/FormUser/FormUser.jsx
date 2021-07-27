@@ -1,5 +1,14 @@
 import styles from './FormUser.module.scss';
-import { Formik, Field, Form } from 'formik';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+
+const SignupSchema = Yup.object().shape({
+  height: Yup.string()
+    .min(2, 'Too Short!')
+    .max(70, 'Too Long!')
+    .required('Required'),
+  age: Yup.string().email('Invalid email').required('Required'),
+});
 
 export default function FormUser() {
   return (
@@ -8,6 +17,7 @@ export default function FormUser() {
         Просчитай свою суточную норму калорий прямо сейчас
       </h1>
       <Formik
+        validationSchema={SignupSchema}
         className={styles.formWrapper}
         initialValues={{
           height: '',
@@ -20,19 +30,26 @@ export default function FormUser() {
           await localStorage.setItem('user', JSON.stringify(values))
         }
       >
-        {({ values }) => (
-          <Form className={styles.form}>
+        {({ values, handleSubmit, handleChange, errors, touched }) => (
+          <Form className={styles.form} onSubmit={handleSubmit}>
             <label>
               <Field
+                value={values.height}
+                // onChange={handleChange}
                 id="height"
                 name="height"
                 placeholder="Рост *"
                 type="text"
                 className={styles.input}
               />
+              <ErrorMessage name="height">
+                {msg => <p className={styles.notification}>{msg}</p>}
+              </ErrorMessage>
             </label>
             <label className={styles.age}>
               <Field
+                value={values.age}
+                onChange={handleChange}
                 id="age"
                 name="age"
                 className={styles.input}
@@ -41,6 +58,8 @@ export default function FormUser() {
             </label>
             <label className={styles.weight}>
               <Field
+                value={values.weight}
+                onChange={handleChange}
                 id="weight"
                 name="weight"
                 className={styles.input}
@@ -49,6 +68,8 @@ export default function FormUser() {
             </label>
             <label>
               <Field
+                value={values.desiredWeight}
+                onChange={handleChange}
                 id="desiredWeight"
                 name="desiredWeight"
                 type="text"
@@ -66,11 +87,12 @@ export default function FormUser() {
               >
                 <label className={styles.label}>
                   <Field
+                    onChange={handleChange}
                     className={styles.radio}
                     type="radio"
                     name="bloodGroup"
                     value="1"
-                    checked="true"
+                    checked={true}
                   />
                   1
                 </label>
