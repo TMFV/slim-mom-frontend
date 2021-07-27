@@ -5,7 +5,9 @@ import Modal from '../Modal/Modal';
 import products from '../../JsonData/products.json';
 
 export default function FormUser() {
-  const [modalActive, setModalActive] = useState(true);
+  const [modalActive, setModalActive] = useState(false);
+  const toggleModal = () => setModalActive(prevModalActive => !prevModalActive);
+
   return (
     <div className={styles.formWrapper}>
       <h1 className={styles.header}>
@@ -66,18 +68,20 @@ export default function FormUser() {
               <Field id="" type="radio" value="3" />
               <Field id="" type="radio" value="4" />
             </label>
-            <button type="submit" onClick={() => setModalActive(true)}>
+            <button type="submit" onClick={toggleModal}>
               Похудеть
             </button>
           </Form>
         )}
       </Formik>
       <form className={styles.formUser}></form>
-      <Modal
-        products={products}
-        active={modalActive}
-        setActive={setModalActive}
-      />
+      {modalActive && (
+        <Modal
+          products={products}
+          active={modalActive}
+          setActive={setModalActive}
+        />
+      )}
     </div>
   );
 }
