@@ -1,11 +1,18 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addProducts } from '../../redux/products/products-operations';
+import { useDispatch, useSelector } from 'react-redux';
+import { productsReducer } from '../../redux/products';
+import {
+  addProducts,
+  searchProducts,
+} from '../../redux/products/products-operations';
+import { productsSelectors } from '../../redux/products';
 import style from './FormProduct.module.scss';
+import ListSearchProducts from '../ListSearchProducts';
 
 const FormProduct = ({ className, onHandleToggleModal }) => {
   const [nameProduct, setNameProduct] = useState('');
   const [volumProduct, setVolumProduct] = useState('');
+  const listSearchProducts = useSelector(productsSelectors.getSearchList);
   const dispatch = useDispatch();
 
   const isModal = onHandleToggleModal ? true : false;
@@ -26,12 +33,25 @@ const FormProduct = ({ className, onHandleToggleModal }) => {
 
   const handleChangeNameProduct = event => {
     event.preventDefault();
+    let value = event.target.value;
+    if (value !== '') {
+      dispatch(searchProducts(value));
+    }
+    if (value === '') {
+      dispatch(productsReducer.actions.searchProductsSuccess([]));
+    }
+
     setNameProduct(event.target.value);
   };
 
   const handleChangeVolumProduct = event => {
     event.preventDefault();
     setVolumProduct(event.target.value);
+  };
+
+  const handelSelectItem = name => {
+    setNameProduct(name);
+    dispatch(productsReducer.actions.searchProductsSuccess([]));
   };
 
   return (
@@ -56,6 +76,7 @@ const FormProduct = ({ className, onHandleToggleModal }) => {
       <button className={style.diary__btnAddProduct} type="submit">
         {document.documentElement.clientWidth < 768 ? 'Добавить' : '+'}
       </button>
+      <ListSearchProducts onHandleSelectItem={handelSelectItem} />
     </form>
   );
 };
