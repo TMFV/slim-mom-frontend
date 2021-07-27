@@ -45,7 +45,7 @@
 
 .input {
   display: block;
-  width: 100%;
+  width: 80%;
   padding: 5px;
   margin: 0 0 40px 0;
   border: none;
@@ -57,7 +57,7 @@
 
 .input__error {
   display: block;
-  width: 100%;
+  width: 80%;
   padding: 5px;
   margin: 0 0 40px 0;
   border: none;
@@ -90,7 +90,6 @@
   box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
   border-radius: 30px;
   transition: $cubic;
-  opacity: 0.8;
 
   &:disabled {
     &:hover {
@@ -105,5 +104,31 @@
 
   @include for-size(tablet) {
     margin: 0 30px 0 0;
+  }
+}
+
+.radiogroup {
+  width: 80%;
+  @include flexbox($jc: space-between);
+  padding-top: 10px;
+}
+
+.radio {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  &:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+    background-color: $accent-color;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 3px solid white;
   }
 }

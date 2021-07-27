@@ -60,18 +60,46 @@ export default function FormUser() {
             <div id="bloodGroup" className={styles.label}>
               Группа крови *
             </div>
-            <div role="group" aria-labelledby="bloodGroup">
-              <label>
-                <Field type="radio" name="bloodGroup" value="1" />1
+            <div
+              role="group"
+              aria-labelledby="bloodGroup"
+              className={styles.radiogroup}
+            >
+              <label className={styles.label}>
+                <Field
+                  className={styles.radio}
+                  type="radio"
+                  name="bloodGroup"
+                  value="1"
+                />
+                1
               </label>
-              <label>
-                <Field type="radio" name="bloodGroup" value="2" />2
+              <label className={styles.label}>
+                <Field
+                  className={styles.radio}
+                  type="radio"
+                  name="bloodGroup"
+                  value="2"
+                />
+                2
               </label>
-              <label>
-                <Field type="radio" name="bloodGroup" value="3" />3
+              <label className={styles.label}>
+                <Field
+                  className={styles.radio}
+                  type="radio"
+                  name="bloodGroup"
+                  value="3"
+                />
+                3
               </label>
-              <label>
-                <Field type="radio" name="bloodGroup" value="4" />4
+              <label className={styles.label}>
+                <Field
+                  className={styles.radio}
+                  type="radio"
+                  name="bloodGroup"
+                  value="4"
+                />
+                4
               </label>
             </div>
             <button type="submit" className={styles.btnSubmit}>
