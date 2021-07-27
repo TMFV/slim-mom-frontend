@@ -1,7 +1,7 @@
 @import '../../assets/baseStyles.scss';
 
 .back {
-  max-width: 100%;
+  width: 100%;
   @media (min-width: 420px) {
     min-height: 100vh;
     background-image: url('../../assets/pictures/Strawberry-Big-PNG@2x.png'),
@@ -13,7 +13,7 @@
     background-size: 30.7%, 43.1%, 57.1%, 47%;
   }
   @include for-size(tablet) {
-    min-height: 100vh;
+    min-height: 1024px;
     background-image: url('../../assets/pictures/Strawberry-Big-PNG.png'),
       url('../../assets/pictures/banana.png'),
       url('../../assets/pictures/hero-leaves-tablet.png'),

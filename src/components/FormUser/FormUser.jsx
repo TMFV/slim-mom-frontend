@@ -27,20 +27,21 @@ export default function FormUser() {
         Просчитай свою суточную норму калорий прямо сейчас
       </h1>
       <Formik
+        className={styles.formWrapper}
         initialValues={{
           height: '',
           age: '',
           weight: '',
           desiredWeight: '',
+          bloodGroup: '',
         }}
-        onSubmit={async values => {
-          await new Promise(r => setTimeout(r, 500));
-          alert(JSON.stringify(values, null, 2));
-        }}
+        onSubmit={async values =>
+          await localStorage.setItem('user', JSON.stringify(values))
+        }
       >
         {({ values }) => (
-          <Form>
-            <label htmlFor="height">
+          <Form className={styles.form}>
+            <label>
               <Field
                 id="height"
                 name="height"
@@ -49,7 +50,7 @@ export default function FormUser() {
                 className={styles.input}
               />
             </label>
-            <label>
+            <label className={styles.age}>
               <Field
                 id="age"
                 name="age"
@@ -57,7 +58,7 @@ export default function FormUser() {
                 placeholder="Возраст *"
               />
             </label>
-            <label>
+            <label className={styles.weight}>
               <Field
                 id="weight"
                 name="weight"
@@ -74,14 +75,55 @@ export default function FormUser() {
                 placeholder="Желаемый вес *"
               />
             </label>
-            <label>
+
+            <div id="bloodGroup" className={styles.label}>
               Группа крови *
-              <Field id="" type="radio" value="1" />
-              <Field id="" type="radio" value="2" />
-              <Field id="" type="radio" value="3" />
-              <Field id="" type="radio" value="4" />
-            </label>
-            <button type="submit" onClick={toggleModal}>
+              <div
+                role="group"
+                aria-labelledby="bloodGroup"
+                className={styles.radiogroup}
+              >
+                <label className={styles.label}>
+                  <Field
+                    className={styles.radio}
+                    type="radio"
+                    name="bloodGroup"
+                    value="1"
+                    checked="true"
+                  />
+                  1
+                </label>
+                <label className={styles.label}>
+                  <Field
+                    className={styles.radio}
+                    type="radio"
+                    name="bloodGroup"
+                    value="2"
+                  />
+                  2
+                </label>
+                <label className={styles.label}>
+                  <Field
+                    className={styles.radio}
+                    type="radio"
+                    name="bloodGroup"
+                    value="3"
+                  />
+                  3
+                </label>
+                <label className={styles.label}>
+                  <Field
+                    className={styles.radio}
+                    type="radio"
+                    name="bloodGroup"
+                    value="4"
+                  />
+                  4
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" className={styles.btnSubmit}  onClick={toggleModal}>
               Похудеть
             </button>
           </Form>
