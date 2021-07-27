@@ -1,0 +1,52 @@
+@import '../../assets/baseStyles.scss';
+
+.diary__listProducts {
+  display: block;
+  margin: 0;
+  padding: 0;
+  max-height: 270;
+  overflow: auto;
+
+  @include for-size(desktop-only) {
+    margin-top: 30px;
+    max-height: 240;
+  }
+
+  @include for-size(tablet-only) {
+    margin-top: 30px;
+    max-height: 210px;
+  }
+}
+
+::-webkit-scrollbar {
+  /* 1 - скроллбар */
+  width: 6px;
+  background-color: #f0f1f3;
+}
+
+::-webkit-scrollbar-button {
+  /* 2 - кнопка */
+}
+
+::-webkit-scrollbar-track {
+  /* 3 - трек */
+}
+
+::-webkit-scrollbar-track-piece {
+  /* 4 - видимая часть трека */
+}
+
+::-webkit-scrollbar-thumb {
+  /* 5 - ползунок */
+  border-radius: 2px;
+  background-color: #264061;
+  width: 6px;
+}
+
+::-webkit-scrollbar-corner {
+  /* 6 - уголок */
+}
+
+::-webkit-resizer {
+  /* 7 - изменение размеров */
+}

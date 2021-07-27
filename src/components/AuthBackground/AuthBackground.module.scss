@@ -1,0 +1,28 @@
+@import '../../assets/baseStyles.scss';
+
+.background {
+  width: 100%;
+  max-width: 100%;
+  @include for-size(tablet) {
+    min-height: 100vh;
+    background-image: url('../../assets/pictures/Strawberry-Big-PNG.png'),
+      url('../../assets/pictures/banana.png'),
+      url('../../assets/pictures/auth-leaves-tablet.png'),
+      url('../../assets/pictures/shapeGrayAuthTablet.svg');
+    background-position: bottom 230px right -85px, bottom -50px right -90px,
+      bottom 240px right 0px, bottom 0px right 0px;
+    background-repeat: no-repeat;
+    background-size: 380px auto, 580px auto, 740px auto, 70% auto;
+  }
+  @include for-size(desktop) {
+    min-height: 100vh;
+    background-image: url('../../assets/pictures/Strawberry-Big-PNG@2x.png'),
+      url('../../assets/pictures/banana-desktop.png'),
+      url('../../assets/pictures/auth-leaves-desktop.png'),
+      url('../../assets/pictures/shapeGrayAuth.svg');
+    background-position: top 200px right 40px, bottom -50px right -220px,
+      bottom 0px right 250px, bottom 0px right 0px;
+    background-repeat: no-repeat;
+    background-size: 380px auto, 880px auto, 840px auto, 62% auto;
+  }
+}

@@ -1,16 +1,27 @@
 import ItemProduct from '../ItemProduct';
-import style from './Style.module.scss';
+import { productsSelectors } from '../../redux/products';
+import style from './ListProduct.module.scss';
+import { useSelector } from 'react-redux';
+import SimpleBar from 'simplebar';
+import 'simplebar/dist/simplebar.min.css';
 
 const ListProducts = () => {
+  const listProducts = useSelector(productsSelectors.getStateProducts);
+  console.log(listProducts);
+  // const isFilterProducts = useSelector(productsSelectors.getFilterProducts);
+  // const scroll = () => {
+  //   window.scrollTo({
+  //     top: document.documentElement.scrollHeight,
+  //     behavior: 'smooth',
+  //   });
+  // };
+
   return (
-    <div className={style.diary__list}>
-      <div className={style.diary__boxTitle}>
-        <h3 className={style.diary__title}>Введите название продукта</h3>
-        <h3 className={style.diary__title}>Граммы</h3>
-        <button className={style.diary__addProduct}>+</button>
-      </div>
-      <ItemProduct />
-    </div>
+    <ul className={style.diary__listProducts}>
+      {listProducts.map(product => (
+        <ItemProduct key={product.id} isProduct={product} />
+      ))}
+    </ul>
   );
 };
 

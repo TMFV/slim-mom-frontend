@@ -1,0 +1,48 @@
+@import '../../assets/baseStyles.scss';
+
+.navWrapper {
+  display: flex;
+  align-items: center;
+  padding: 18px 15px 18px 15px;
+  margin: 0 auto;
+  justify-content: space-between;
+
+  &:after {
+    content: '';
+    border-bottom: 2px solid $light-gray;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+  }
+  @include for-size(tablet) {
+    padding: 17px 49px 17px 49px;
+  }
+  @include for-size(desktop) {
+    justify-content: start;
+    padding: 129px 0 0 90px;
+    &:after {
+      content: '';
+      border: none;
+    }
+  }
+}
+
+.HeaderWrapper {
+  position: relative;
+}
+
+.arrowBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+  padding: 15px;
+  position: absolute;
+  left: 0;
+  bottom: -44px;
+  @include for-size(tablet) {
+    display: none;
+  }
+}

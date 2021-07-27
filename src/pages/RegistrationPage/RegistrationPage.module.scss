@@ -1,2 +1,16 @@
-.singup {
+html,
+body {
+  height: 100%;
+}
+
+.signup {
+  min-height: 100vh;
+}
+
+.wrapper {
+  min-height: 100vh;
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 100%;
+  padding: 15px;
 }

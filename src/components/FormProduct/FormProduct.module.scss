@@ -1,0 +1,89 @@
+@import '../../assets/baseStyles.scss';
+@import '../../pages/Diary/Diary.module.scss';
+
+// .diary__form {
+//   display: flex;
+//   margin-top: 60px;
+//   margin-bottom: 60px;
+//   align-items: center;
+
+//   @include for-size(tablet-only) {
+//     display: none;
+//   }
+// }
+
+.diary__nameProduct {
+  width: 242px;
+  height: 36px;
+  margin-right: 30px;
+  padding-bottom: 19px;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+
+  outline: none;
+
+  color: $secondary-text-color;
+  vertical-align: top;
+
+  @include font(700, 14px, 17px, $primary-font, $primary-letter-spacing);
+
+  &:focus {
+    color: $primary-text-color;
+  }
+  @include for-size(tablet-only) {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+.diary__volumProduct {
+  width: 106px;
+  height: 36px;
+  margin-right: 75px;
+  padding-bottom: 19px;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  outline: none;
+
+  color: $secondary-text-color;
+  text-align: right;
+
+  @include font(700, 14px, 17px, $primary-font, $primary-letter-spacing);
+
+  &:focus {
+    color: $primary-text-color;
+  }
+  @include for-size(tablet-only) {
+    margin-top: 30px;
+    margin-right: 0;
+    margin-bottom: 60px;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+.diary__btnAddProduct {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+
+  color: white;
+  @include font(700, 20px, 17px, $primary-font, $primary-letter-spacing);
+
+  background: #fc842d;
+  /* orange */
+
+  box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+  cursor: pointer;
+
+  @include for-size(tablet-only) {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 176px;
+    height: 44px;
+    border-radius: 30px;
+  }
+}

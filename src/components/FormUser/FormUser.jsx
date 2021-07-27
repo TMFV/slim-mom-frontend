@@ -20,7 +20,7 @@ export default function FormUser() {
       setModalActive(false);
     }
   };
-
+  
   return (
     <div className={styles.formWrapper}>
       <h1 className={styles.header}>
@@ -88,6 +88,7 @@ export default function FormUser() {
         )}
       </Formik>
       <form className={styles.formUser}></form>
+
       {modalActive && (
         <Modal
           products={products}

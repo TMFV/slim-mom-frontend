@@ -1,0 +1,109 @@
+@import '../../assets/baseStyles.scss';
+
+.NavAuthWrapper {
+  text-transform: uppercase;
+  font-family: $secondary-font;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: $primary-letter-spacing;
+  transition: $cubic;
+  display: flex;
+  & a:first-child {
+    margin-right: 14px;
+  }
+
+  @include for-size(tablet) {
+    margin-left: auto;
+  }
+  @include for-size(desktop) {
+    border-left: 2px solid $light-gray;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 22px;
+  }
+
+  .activeEnter {
+    color: $primary-text-color;
+  }
+}
+.enter {
+  color: $secondary-text-color;
+  &:hover {
+    color: $primary-text-color;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.userWrapper {
+  color: $secondary-text-color;
+  text-transform: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  width: 100vw;
+  right: 0;
+  background-color: #eff1f3;
+  bottom: -40px;
+  height: 40px;
+
+  @include for-size(tablet) {
+    position: static;
+    background-color: transparent;
+    width: unset;
+  }
+  @include for-size(desktop) {
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+  }
+}
+
+.linksWapper {
+  display: none;
+  @include for-size(desktop) {
+    display: block;
+  }
+}
+
+.logout {
+  font-family: $secondary-font;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: $primary-letter-spacing;
+  transition: $cubic;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+  padding-right: 15px;
+  &:hover {
+    color: $primary-text-color;
+  }
+  @include for-size(tablet) {
+    margin-right: 50px;
+    padding-right: 0;
+  }
+}
+
+.userName {
+  margin-right: 15px;
+  border-right: 2px solid $light-gray;
+  padding-right: 15px;
+  text-transform: capitalize;
+  transition: $cubic;
+  &:hover {
+    color: $primary-text-color;
+  }
+}
+
+// * {
+//   outline: solid red;
+// }
