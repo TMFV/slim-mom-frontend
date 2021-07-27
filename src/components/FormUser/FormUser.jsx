@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './FormUser.module.scss';
 import { Formik, Field, Form } from 'formik';
 import Modal from '../Modal/Modal';
@@ -7,6 +7,19 @@ import products from '../../JsonData/products.json';
 export default function FormUser() {
   const [modalActive, setModalActive] = useState(false);
   const toggleModal = () => setModalActive(prevModalActive => !prevModalActive);
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+  const handleKeyDown = event => {
+    if (event.code === 'Escape') {
+      setModalActive(false);
+    }
+  };
 
   return (
     <div className={styles.formWrapper}>
