@@ -10,29 +10,34 @@
   @include for-size(desktop) {
     position: relative;
     width: 41.8vw;
-    height: 100vw;
     background-color: $secondary-bg-color;
     min-height: 100vh;
+    max-height: 850px;
+    background-repeat: no-repeat;
     @media only screen and (-webkit-min-device-pixel-ratio: 2),
       only screen and (min-device-pixel-ratio: 2) {
       background-image: url('../../assets/pictures/diary-leaves-desktop@2x.png');
-      background-size: 100%;
-      background-position: left 47px;
+      background-position: right 0;
     }
     @media only screen and (-webkit-min-device-pixel-ratio: 1),
       only screen and (min-device-pixel-ratio: 1) {
       background-image: url('../../assets/pictures/diary-leaves-desktop.png');
-      background-size: 100%;
+      background-position: right 0;
     }
   }
 }
-
+.panelContainerInner {
+}
+.userInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
 .userWrapper {
   color: $secondary-text-color;
   text-transform: none;
   display: flex;
   align-items: center;
-  width: 100vw;
   background-color: #eff1f3;
 
   @include for-size(tablet) {
@@ -41,9 +46,9 @@
     width: unset;
   }
   @include for-size(desktop) {
-    position: absolute;
-    right: 115px;
-    top: 123px;
+    margin-top: 123px;
+    padding-right: 115px;
+    padding-left: auto;
   }
 }
 
@@ -59,12 +64,16 @@
   padding: 0;
   cursor: pointer;
   outline: inherit;
-  padding-right: 15px;
+
   &:hover {
     color: $primary-text-color;
   }
   @include for-size(tablet) {
     margin-right: 50px;
+    padding-right: 0;
+  }
+  @include for-size(desktop) {
+    margin-right: 0;
     padding-right: 0;
   }
 }
@@ -74,6 +83,7 @@
   align-items: center;
   margin-right: 15px;
   border-right: 2px solid $light-gray;
+  margin-left: auto;
   padding-right: 15px;
   height: 32px;
   text-transform: capitalize;
@@ -85,12 +95,57 @@
   }
 }
 
+.informationListBlock {
+  justify-content: space-between;
+  margin-top: 137px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 330px;
+}
+.informationListTitle {
+  margin-top: 0;
+  margin-bottom: 42px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+
+  color: $primary-text-color;
+}
 .list {
   list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
 }
 .listItem {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 19px;
+  font-weight: normal;
+  color: $secondary-text-color;
+}
+.listItemValue {
+  display: inline-block;
+  padding-right: 60px;
+  padding-left: auto;
+  font-weight: normal;
+  color: $secondary-text-color;
+}
+.productsTitle {
+  margin-top: 0;
+  margin-bottom: 42px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  color: $primary-text-color;
 }
 .products {
+  margin-top: 0;
+  margin-bottom: 42px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
   color: $secondary-text-color;
 }

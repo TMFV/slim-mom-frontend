@@ -6,6 +6,7 @@ function productsToString(productsArray) {
   productsArray.forEach((product, idx) => {
     if (idx === 0) {
       textString += `${product}`;
+      textString = textString[0].toUpperCase() + textString.substring(1);
     }
     textString += `, ${product}`;
   });
@@ -37,38 +38,42 @@ const RightInfoPanel = () => {
 
   return (
     <div className={styles.panelContainer}>
-      <div className={styles.userWrapper}>
-        <p className={styles.userName}>{name}</p>
-        <button onClick={onLogOut} className={styles.logout}>
-          Выйти
-        </button>
-      </div>
-      <div>
-        <h5> Сводка за {date}</h5>
-        <ul className={styles.list}>
-          <li className={styles.listItem}>
-            <span>Осталось</span>
-            <span>{remaining} ккал</span>
-          </li>
-          <li className={styles.listItem}>
-            <span>Употреблено</span>
-            <span>{eating} ккал</span>
-          </li>
-          <li className={styles.listItem}>
-            <span>Дневная норма</span>
-            <span>{dailyRate} ккал</span>
-          </li>
-          <li className={styles.listItem}>
-            <span>n% от нормы</span>
-            <span>{percentOfRate} ккал</span>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h5> Нерекомендуемые продукты</h5>
-        <span className={styles.products}>
-          {productsToString(productsArray)}
-        </span>
+      <div className={styles.panelContainerInner}>
+        <div className={styles.userInfo}>
+          <div className={styles.userWrapper}>
+            <p className={styles.userName}>{name}</p>
+            <button onClick={onLogOut} className={styles.logout}>
+              Выйти
+            </button>
+          </div>
+        </div>
+        <div className={styles.informationListBlock}>
+          <h5 className={styles.informationListTitle}>Сводка за {date}</h5>
+          <ul className={styles.list}>
+            <li className={styles.listItem}>
+              <span>Осталось</span>
+              <span className={styles.listItemValue}>{remaining} ккал</span>
+            </li>
+            <li className={styles.listItem}>
+              <span>Употреблено</span>
+              <span className={styles.listItemValue}>{eating} ккал</span>
+            </li>
+            <li className={styles.listItem}>
+              <span>Дневная норма</span>
+              <span className={styles.listItemValue}>{dailyRate} ккал</span>
+            </li>
+            <li className={styles.listItem}>
+              <span>n% от нормы</span>
+              <span className={styles.listItemValue}>{percentOfRate} ккал</span>
+            </li>
+          </ul>
+        </div>
+        <div className={styles.productsBlock}>
+          <h5 className={styles.productsTitle}> Нерекомендуемые продукты</h5>
+          <span className={styles.products}>
+            {productsToString(productsArray)}
+          </span>
+        </div>
       </div>
     </div>
   );
