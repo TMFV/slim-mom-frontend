@@ -1,0 +1,96 @@
+@import '../../assets/baseStyles.scss';
+
+.panelContainer {
+  font-family: Verdana;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  @include for-size(desktop) {
+    position: relative;
+    width: 41.8vw;
+    height: 100vw;
+    background-color: $secondary-bg-color;
+    min-height: 100vh;
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (min-device-pixel-ratio: 2) {
+      background-image: url('../../assets/pictures/diary-leaves-desktop@2x.png');
+      background-size: 100%;
+      background-position: left 47px;
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1),
+      only screen and (min-device-pixel-ratio: 1) {
+      background-image: url('../../assets/pictures/diary-leaves-desktop.png');
+      background-size: 100%;
+    }
+  }
+}
+
+.userWrapper {
+  color: $secondary-text-color;
+  text-transform: none;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  background-color: #eff1f3;
+
+  @include for-size(tablet) {
+    position: static;
+    background-color: transparent;
+    width: unset;
+  }
+  @include for-size(desktop) {
+    position: absolute;
+    right: 115px;
+    top: 123px;
+  }
+}
+
+.logout {
+  font-family: $secondary-font;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: $primary-letter-spacing;
+  transition: $cubic;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+  padding-right: 15px;
+  &:hover {
+    color: $primary-text-color;
+  }
+  @include for-size(tablet) {
+    margin-right: 50px;
+    padding-right: 0;
+  }
+}
+
+.userName {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  border-right: 2px solid $light-gray;
+  padding-right: 15px;
+  height: 32px;
+  text-transform: capitalize;
+  font-weight: bold;
+  transition: $cubic;
+  color: $primary-text-color;
+  &:hover {
+    color: $secondary-text-color;
+  }
+}
+
+.list {
+  list-style-type: none;
+}
+.listItem {
+  margin-bottom: 19px;
+}
+.products {
+  color: $secondary-text-color;
+}

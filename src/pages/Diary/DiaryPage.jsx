@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { dowloadProducts } from '../../redux/products/products-operations';
 import { productsSelectors } from '../../redux/products';
 // import ListSearchProducts from '../../components/ListSearchProducts';
+import RightInfoPanel from '../../components/RightInfoPanel';
 
 const Diary = () => {
   const [isModal, setIsModal] = useState(false);
@@ -28,18 +29,21 @@ const Diary = () => {
 
   return (
     <Container>
-      <div className={style.diary}>
-        <Date />
-        <FormProduct className={classNameMobile} />
-        {isListProducts.length > 0 ? <ListProducts /> : null}
-        <ButtonAdd onHandleToggleModal={handleToggleModal} />
-        {isModal ? (
-          <ModalAddProducts
-            className={classNameModal}
-            onHandleToggleModal={handleToggleModal}
-          />
-        ) : null}
-        {/* <ListSearchProducts /> */}
+      <div className={style.flexContainer}>
+        <div className={style.diary}>
+          <Date />
+          <FormProduct className={classNameMobile} />
+          {isListProducts.length > 0 ? <ListProducts /> : null}
+          <ButtonAdd onHandleToggleModal={handleToggleModal} />
+          {isModal ? (
+            <ModalAddProducts
+              className={classNameModal}
+              onHandleToggleModal={handleToggleModal}
+            />
+          ) : null}
+          {/* <ListSearchProducts /> */}
+        </div>
+        <RightInfoPanel />
       </div>
     </Container>
   );
