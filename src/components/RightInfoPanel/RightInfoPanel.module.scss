@@ -11,18 +11,18 @@
     position: relative;
     width: 41.8vw;
     background-color: $secondary-bg-color;
+
     min-height: 100vh;
     max-height: 850px;
     background-repeat: no-repeat;
     @media only screen and (-webkit-min-device-pixel-ratio: 2),
       only screen and (min-device-pixel-ratio: 2) {
       background-image: url('../../assets/pictures/diary-leaves-desktop@2x.png');
-      background-position: right 0;
+      background-position: bottom 60px right -10px;
     }
     @media only screen and (-webkit-min-device-pixel-ratio: 1),
       only screen and (min-device-pixel-ratio: 1) {
       background-image: url('../../assets/pictures/diary-leaves-desktop.png');
-      background-position: right 0;
     }
   }
 }
@@ -131,6 +131,12 @@
   font-weight: normal;
   color: $secondary-text-color;
 }
+.productsBlock {
+  max-width: 330px;
+  margin-top: 60px;
+  margin-right: auto;
+  margin-left: auto;
+}
 .productsTitle {
   margin-top: 0;
   margin-bottom: 42px;
@@ -141,11 +147,13 @@
   color: $primary-text-color;
 }
 .products {
+  display: block;
+  width: 280px;
   margin-top: 0;
   margin-bottom: 42px;
   font-weight: normal;
   font-size: 14px;
-  line-height: 17px;
+  line-height: 35px;
   letter-spacing: 0.04em;
   color: $secondary-text-color;
 }

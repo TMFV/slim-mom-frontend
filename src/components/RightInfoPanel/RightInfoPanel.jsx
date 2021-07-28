@@ -7,8 +7,9 @@ function productsToString(productsArray) {
     if (idx === 0) {
       textString += `${product}`;
       textString = textString[0].toUpperCase() + textString.substring(1);
+    } else if (idx > 0) {
+      textString += `, ${product}`;
     }
-    textString += `, ${product}`;
   });
   return textString;
 }
@@ -29,7 +30,7 @@ const RightInfoPanel = () => {
     'жирная рыба',
     'икра и мясо',
     'грибы',
-    'крупы(пшено, перловая, пшеничная)',
+    'крупы (пшено, перловая, пшеничная)',
   ];
   // const onLogOut = useCallback(() => {
   //   dispatch(authOperations.logOut());
